@@ -37,6 +37,7 @@ h1 {
  * Styles for the deck of cards
  */
 
+/* The deck is the coloured square which is the background of the memory game cards. */
 .deck {
 		width: 660px;
 		min-height: 680px;
@@ -55,6 +56,8 @@ h1 {
 		height: 125px;
 		width: 125px;
 		background: #2e3d49;
+		/* The font-size is 0 so that the symbols are hidden. The font size is bigger in
+		.deck .card.show. This should be activated when the card is flipped. */
 		font-size: 0;
 		color: #ffffff;
 		border-radius: 8px;
@@ -65,16 +68,21 @@ h1 {
 		box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+/* transform: rotateY(); gives the card 3D-rotation around the Y-axis. --> Figure
+out which value is appropriate. Maybe 180 degrees? */
 .deck .card.open {
 		transform: rotateY(0);
 		background: #02b3e4;
 		cursor: default;
 }
 
+/* The big font size makes sure that the card symbols show. Activate this when the
+card is flipped. */
 .deck .card.show {
 		font-size: 33px;
 }
 
+/* The colour of the card has to change when there is a match. */
 .deck .card.match {
 		cursor: default;
 		background: #02ccba;
@@ -91,6 +99,8 @@ h1 {
 		margin-bottom: 10px;
 }
 
+/* Maybe add a new class that adds yellow colour to the stars as soon as the final
+score is given. Fancy bonus: Add animation to the stars. */
 .score-panel .stars {
 		margin: 0;
 		padding: 0;
