@@ -2,6 +2,29 @@
  * Create a list that holds all of your cards
  */
 
+ /* I store the FontAwesome Icons in variables first and then I'll put them into
+ an array. Maybe that will help me later to access them easily. (Or not. Who knows. ;)) */
+const diamond = "fa fa-diamond";
+const paperPlane = "fa fa-paper-plane-o";
+const anchor = "fa fa-anchor";
+const bolt = "fa fa-bolt";
+const cube = "fa fa-cube";
+const leaf = "fa fa-leaf";
+const bicycle = "fa fa-bicycle";
+const bomb = "fa fa-bomb";
+
+/* An array with the variables that contain the FontAwesome Icons. I need 16 cards
+so I have to add every icon twice. */
+const icons = [
+							diamond, diamond,
+							paperPlane, paperPlane,
+							anchor, anchor,
+							bolt, bolt,
+							cube, cube,
+							leaf, leaf,
+							bicycle, bicycle,
+							bomb, bomb
+							]
 
 /*
  * Display the cards on the page
