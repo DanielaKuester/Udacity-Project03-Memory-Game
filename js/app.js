@@ -84,10 +84,20 @@ function shuffle(array) {
 
 /* Select all the cards and add one event listener for all the cards. */
 const cards = document.querySelectorAll('.card');
+const flippedCards = [];
 cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
 			console.log('This card was clicked!');
 			oneCard.classList.toggle("open");
 			oneCard.classList.toggle("show");
+
+			if (flippedCards.length < 2) {
+				flippedCards.push(oneCard.innerHTML);
+				console.log("Length of array: " + flippedCards.length);
+				console.log("Items in flippedCards: " + flippedCards);
+			} else {
+				// Print an alarm if more than two items are in the array of flipped cards
+				console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
+			}
 	})
 });
