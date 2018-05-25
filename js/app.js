@@ -83,8 +83,7 @@ function shuffle(array) {
  */
 
 /* Select all the cards and add one event listener for all the cards. */
-
 const cards = document.querySelectorAll('.card');
 cards.addEventListener('click', function () {
-	console.log("This card was clicked!");
+	console.log('This card was clicked!');
 });
