@@ -86,6 +86,8 @@ function shuffle(array) {
 const cards = document.querySelectorAll('.card');
 cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
-		console.log('This card was clicked!');
+			console.log('This card was clicked!');
+			oneCard.classList.toggle("open");
+			oneCard.classList.toggle("show");
 	})
 });
