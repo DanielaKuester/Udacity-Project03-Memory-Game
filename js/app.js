@@ -1,3 +1,25 @@
+/* TODO: How will I proceed from start to finish?
+		1. Learn JS debugging: https://www.youtube.com/watch?v=-q1z8BPFItw	--> CHECK!
+		2. Watch Cameron Pittman's webinar about debugging: https://www.youtube.com/watch?v=vftSDWcA6to
+		3. Break down the Memory Game Project into a list of smaller steps; write that list down on paper and/or in a Markdown file
+		4. Rewatch Mark Wales' webinar about this Memory Game project: https://www.youtube.com/watch?v=_rUH-sEs68Y
+			 --> Do *not* try to memorise the code that he writes (come up with your own code!) but focus on his problem solving strategies
+			 and the order of the steps that he takes. Maybe take notes about this order. What does he do first, what next, etc.?
+		5. Analyse the shuffle function from the starter code and write into comments what it does exactly. It is very important that I
+			 understand *everything* that is in my code!
+ */
+
+/* TODO: What do I want to practice strategically with this project (apart from *applying* my theoretical programming knowledge)?
+	 1. Use Git branches to test out new little features in JavaScript and merge the branch into the master branch when they are working.
+	  	--> Make more effective use of Git and GitHub!
+	 2. Apply my new debugging knowledge in this project regularly.
+	 		** console.log() and console.clear()
+			** breakpoints and watches
+			** code snippets
+			** live debugging
+			--> Use the dev tools as frequent as possible!!!
+ */
+
 /*
  * Create a list that holds all of your cards
  */
@@ -59,3 +81,10 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+/* Select all the cards and add one event listener for all the cards. */
+
+const cards = document.querySelectorAll('.card');
+cards.addEventListener('click', function () {
+	console.log("This card was clicked!");
+});
