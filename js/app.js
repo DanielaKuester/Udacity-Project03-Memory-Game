@@ -87,9 +87,7 @@ const cards = document.querySelectorAll('.card');
 const flippedCards = [];
 cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
-			console.log('This card was clicked!');
-			oneCard.classList.toggle("open");
-			oneCard.classList.toggle("show");
+			oneCard.classList.add("open", "show");
 
 			if (flippedCards.length < 2) {
 				flippedCards.push(oneCard.innerHTML);
@@ -98,6 +96,17 @@ cards.forEach(function(oneCard) {
 			} else {
 				// Print an alarm if more than two items are in the array of flipped cards
 				console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
+			}
+
+			if (flippedCards.length === 2) {
+				//compare flippedCards
+				if (flippedCards[0] === flippedCards[1]) {
+					console.log("This is a match!");
+					this.classList.add("match");
+					//add class "match" also to the first item in the array
+				} else {
+					console.log("No match!");
+				}
 			}
 	})
 });
