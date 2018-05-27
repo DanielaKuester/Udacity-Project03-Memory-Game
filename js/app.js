@@ -1,11 +1,5 @@
-/* TODO: How will I proceed from start to finish?
-		1. Learn JS debugging: https://www.youtube.com/watch?v=-q1z8BPFItw	--> CHECK!
-		2. Watch Cameron Pittman's webinar about debugging: https://www.youtube.com/watch?v=vftSDWcA6to
-		3. Break down the Memory Game Project into a list of smaller steps; write that list down on paper and/or in a Markdown file
-		4. Rewatch Mark Wales' webinar about this Memory Game project: https://www.youtube.com/watch?v=_rUH-sEs68Y
-			 --> Do *not* try to memorise the code that he writes (come up with your own code!) but focus on his problem solving strategies
-			 and the order of the steps that he takes. Maybe take notes about this order. What does he do first, what next, etc.?
-		5. Analyse the shuffle function from the starter code and write into comments what it does exactly. It is very important that I
+/* TODO: What do I want to learn next?
+		1. Analyse the shuffle function from the starter code and write into comments what it does exactly. It is very important that I
 			 understand *everything* that is in my code!
  */
 
@@ -59,7 +53,7 @@ for (let i = 0; i < icons.length; i ++) {
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 
-/*
+
 function shuffle(array) {
 		var currentIndex = array.length, temporaryValue, randomIndex;
 
