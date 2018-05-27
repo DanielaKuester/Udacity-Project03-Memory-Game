@@ -84,9 +84,10 @@ function shuffle(array) {
 
 /* Select all the cards and add one event listener for all the cards. */
 const cards = document.querySelectorAll('.card');
-const flippedCards = [];
+var flippedCards = [];
 cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
+			console.log("This card was clicked!")
 			oneCard.classList.add("open", "show");
 
 			if (flippedCards.length < 2) {
@@ -107,6 +108,8 @@ cards.forEach(function(oneCard) {
 				} else {
 					console.log("No match!");
 				}
+				//empty the array again
+				flippedCards = [];
 			}
 	})
 });
