@@ -30,10 +30,11 @@ const icons = [
 							"fa-bicycle", "fa-bicycle",
 							"fa-bomb", "fa-bomb",
 							]
+
 /* Create the deck */
 const deck = document.querySelector(".deck");
 const allCards = document.querySelectorAll(".card");
-
+const cardDeck = [];
 /* Loop thrugh each card and create its html */
 
 for (let i = 0; i < icons.length; i ++) {
@@ -41,6 +42,7 @@ for (let i = 0; i < icons.length; i ++) {
 	oneCard.classList.add("card");
 	oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
 	deck.appendChild(oneCard);
+	cardDeck.push(oneCard);
 	console.log(oneCard);
 }
 
