@@ -54,10 +54,10 @@ const allCards = document.querySelectorAll(".card");
 /* Loop thrugh each card and create its html */
 
 for (let i = 0; i < icons.length; i ++) {
-	console.log(i);
-	/*const oneCard = document.createElement("li");
+	const oneCard = document.createElement("li");
 	oneCard.classList.add("card");
-	deck.appendChild(oneCard); */
+	deck.appendChild(oneCard);
+	console.log(oneCard);
 }
 
 /*
