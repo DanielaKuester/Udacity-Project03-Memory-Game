@@ -47,6 +47,18 @@ const icons = [
 							bicycle, bicycle,
 							bomb, bomb
 							]
+/* Create the deck */
+const deck = document.querySelector(".deck");
+const allCards = document.querySelectorAll(".card");
+
+/* Loop thrugh each card and create its html */
+
+for (let i = 0; i < icons.length; i ++) {
+	console.log(i);
+	/*const oneCard = document.createElement("li");
+	oneCard.classList.add("card");
+	deck.appendChild(oneCard); */
+}
 
 /*
  * Display the cards on the page
@@ -56,6 +68,8 @@ const icons = [
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
+/*
 function shuffle(array) {
 		var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -83,6 +97,7 @@ function shuffle(array) {
  */
 
 /* Select all the cards and add one event listener for all the cards. */
+
 const cards = document.querySelectorAll('.card');
 var flippedCards = [];
 cards.forEach(function(oneCard) {
