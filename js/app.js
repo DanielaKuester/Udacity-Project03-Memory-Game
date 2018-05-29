@@ -46,6 +46,44 @@ for (let i = 0; i < icons.length; i ++) {
 	console.log(oneCard);
 }
 
+/* Select all the cards and add one event listener for all the cards. */
+const cards = document.querySelectorAll('.card');
+let cardOne = "";
+let cardTwo = "";
+let flippedCards = [];
+cards.forEach(function(oneCard) {
+		oneCard.addEventListener('click', function (e) {
+			console.log("This card was clicked!")
+			oneCard.classList.add("open", "show");
+
+			if (flippedCards.length < 2) {
+				flippedCards.push(oneCard.innerHTML);
+				console.log("Length of array: " + flippedCards.length);
+				console.log("Items in flippedCards: " + flippedCards);
+			} else {
+				// Print an alarm if more than two items are in the array of flipped cards
+				console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
+			}
+			if (flippedCards.length === 1) {
+				cardOne = flippedCards[0];
+			}
+			if (flippedCards.length === 2) {
+				cardTwo = flippedCards[1];
+				//compare flippedCards
+				if (cardOne === cardTwo) {
+					console.log("This is a match!");
+					cardOne.parentNode.classList.add("match");
+					cardTwo.parentNode.classList.add("match");
+					//add class "match" also to the first item in the array
+				} else {
+					console.log("No match!");
+				}
+				//empty the array again
+				flippedCards = [];
+			}
+	})
+});
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -81,36 +119,3 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
-/* Select all the cards and add one event listener for all the cards. */
-
-const cards = document.querySelectorAll('.card');
-var flippedCards = [];
-cards.forEach(function(oneCard) {
-		oneCard.addEventListener('click', function (e) {
-			console.log("This card was clicked!")
-			oneCard.classList.add("open", "show");
-
-			if (flippedCards.length < 2) {
-				flippedCards.push(oneCard.innerHTML);
-				console.log("Length of array: " + flippedCards.length);
-				console.log("Items in flippedCards: " + flippedCards);
-			} else {
-				// Print an alarm if more than two items are in the array of flipped cards
-				console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
-			}
-
-			if (flippedCards.length === 2) {
-				//compare flippedCards
-				if (flippedCards[0] === flippedCards[1]) {
-					console.log("This is a match!");
-					this.classList.add("match");
-					//add class "match" also to the first item in the array
-				} else {
-					console.log("No match!");
-				}
-				//empty the array again
-				flippedCards = [];
-			}
-	})
-});
