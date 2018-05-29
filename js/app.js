@@ -51,6 +51,8 @@ const cards = document.querySelectorAll('.card');
 let cardOne = "";
 let cardTwo = "";
 let flippedCards = [];
+let matchedCards = [];
+
 cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
 			console.log("This card was clicked!")
@@ -74,6 +76,7 @@ cards.forEach(function(oneCard) {
 					console.log("This is a match!");
 					cardOne.classList.add("match");
 					cardTwo.classList.add("match");
+					matchedCards.push(cardOne, cardTwo);
 					flippedCards = [];
 					//add class "match" also to the first item in the array
 				} else {
@@ -82,7 +85,7 @@ cards.forEach(function(oneCard) {
 						cardOne.classList.remove("open", "show");
 						cardTwo.classList.remove("open", "show");
 					}, 1000);
-
+					flippedCards = [];
 				}
 				//empty the array again
 				flippedCards = [];
