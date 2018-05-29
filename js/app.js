@@ -57,7 +57,7 @@ cards.forEach(function(oneCard) {
 			oneCard.classList.add("open", "show");
 
 			if (flippedCards.length < 2) {
-				flippedCards.push(oneCard.innerHTML);
+				flippedCards.push(this);
 				console.log("Length of array: " + flippedCards.length);
 				console.log("Items in flippedCards: " + flippedCards);
 			} else {
@@ -70,10 +70,10 @@ cards.forEach(function(oneCard) {
 			if (flippedCards.length === 2) {
 				cardTwo = flippedCards[1];
 				//compare flippedCards
-				if (cardOne === cardTwo) {
+				if (cardOne.className == cardTwo.className) {
 					console.log("This is a match!");
-					cardOne.parentNode.classList.add("match");
-					cardTwo.parentNode.classList.add("match");
+					cardOne.classList.add("match");
+					cardTwo.classList.add("match");
 					//add class "match" also to the first item in the array
 				} else {
 					console.log("No match!");
