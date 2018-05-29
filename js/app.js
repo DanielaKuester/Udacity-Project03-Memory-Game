@@ -70,10 +70,11 @@ cards.forEach(function(oneCard) {
 			if (flippedCards.length === 2) {
 				cardTwo = flippedCards[1];
 				//compare flippedCards
-				if (cardOne.className == cardTwo.className) {
+				if (cardOne.innerHTML === cardTwo.innerHTML) {
 					console.log("This is a match!");
 					cardOne.classList.add("match");
 					cardTwo.classList.add("match");
+					flippedCards = [];
 					//add class "match" also to the first item in the array
 				} else {
 					console.log("No match!");
