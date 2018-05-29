@@ -78,6 +78,11 @@ cards.forEach(function(oneCard) {
 					//add class "match" also to the first item in the array
 				} else {
 					console.log("No match!");
+					setTimeout(function() {
+						cardOne.classList.remove("open", "show");
+						cardTwo.classList.remove("open", "show");
+					}, 1000);
+
 				}
 				//empty the array again
 				flippedCards = [];
