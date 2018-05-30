@@ -41,11 +41,11 @@ function movesCounter() {
 }
 
 //This function creats the deck of cards
+/* Create the deck */
+const deck = document.querySelector(".deck");
+const allCards = document.querySelectorAll(".card");
+const cardDeck = [];
 function createDeck() {
-	/* Create the deck */
-	const deck = document.querySelector(".deck");
-	const allCards = document.querySelectorAll(".card");
-	const cardDeck = [];
 	/* Loop thrugh each card and create its html */
 	shuffle(icons);
 	for (let i = 0; i < icons.length; i ++) {
@@ -150,8 +150,16 @@ startGame();
 
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
-	//TODO: 1) Turn the cards around to show their backs
+	//Empty the arrays
+	flippedCards = [];
+	matchedCards = [];
+
+	//Loop through the array to turn cards around
+	for (let j = 0; j < cardDeck.length; j++) {
+		cardDeck[j].classList.remove("open", "show", "match", "disableClick");
+	}
 	//TODO: 2) Reshuffle the cards
+	//TODO: 3) Reset movesCounter to 0
 });
 
 /*
