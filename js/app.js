@@ -32,7 +32,7 @@ const icons = [
 							]
 
 // The function that initialises a new game
-function init() {
+function startGame() {
 	function createDeck() {
 		/* Create the deck */
 		const deck = document.querySelector(".deck");
@@ -129,7 +129,7 @@ function init() {
 	clickCard();
 }
 
-init();
+startGame();
 
 /*
  * Display the cards on the page
