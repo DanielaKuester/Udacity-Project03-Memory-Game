@@ -75,33 +75,39 @@ cards.forEach(function(oneCard) {
 			if (flippedCards.length === 2) {
 				cardTwo = flippedCards[1];
 
-				//compare flippedCards
-				if (cardOne.innerHTML === cardTwo.innerHTML) {
-					/* If the cards match, add the class "match" to them and push them into
-					a new array. */
-					console.log("This is a match!");
-					cardOne.classList.add("match");
-					cardTwo.classList.add("match");
-					matchedCards.push(cardOne, cardTwo);
-					flippedCards = [];
-
-					//Find out if all cards are matched and if the game is over
-					gameOver();
-
-				} else {
-					//Set a timeout: turn the cards after one second if they don't match
-					console.log("No match!");
-					setTimeout(function() {
-						cardOne.classList.remove("open", "show", "disableClick");
-						cardTwo.classList.remove("open", "show", "disableClick");
-						flippedCards = [];
-					}, 500);
-				}
-				//empty the array again
-				flippedCards = [];
+				//Compare the cards
+				compareCards();
 			}
 	})
 });
+
+// Add a function to compare the cards
+function compareCards() {
+	//compare flippedCards
+	if (cardOne.innerHTML === cardTwo.innerHTML) {
+		/* If the cards match, add the class "match" to them and push them into
+		a new array. */
+		console.log("This is a match!");
+		cardOne.classList.add("match");
+		cardTwo.classList.add("match");
+		matchedCards.push(cardOne, cardTwo);
+		flippedCards = [];
+
+		//Find out if all cards are matched and if the game is over
+		gameOver();
+
+	} else {
+		//Set a timeout: turn the cards after one second if they don't match
+		console.log("No match!");
+		setTimeout(function() {
+			cardOne.classList.remove("open", "show", "disableClick");
+			cardTwo.classList.remove("open", "show", "disableClick");
+			flippedCards = [];
+		}, 500);
+	}
+	//empty the array again
+	flippedCards = [];
+}
 
 /* The function gameOver checks whether there are 16 items in the array with the
 matched cards and in the original array of cards and then decides if the game is
