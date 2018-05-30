@@ -148,8 +148,8 @@ startGame();
 
 // Add reset button
 
-const resetButton = document.querySelector(".restart");
-resetButton.addEventListener("click", function() {
+const restartButton = document.querySelector(".restart");
+restartButton.addEventListener("click", function() {
 	//Empty all arrays
 	flippedCards = [];
 	matchedCards = [];
