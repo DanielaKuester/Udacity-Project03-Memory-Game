@@ -29,7 +29,16 @@ const icons = [
 							"fa-leaf", "fa-leaf",
 							"fa-bicycle", "fa-bicycle",
 							"fa-bomb", "fa-bomb",
-							]
+						]
+
+// Add a function that counts the moves
+const countedMoves = document.querySelector(".moves");
+let moves = 0;
+function movesCounter() {
+	moves++;
+	countedMoves.innerHTML = moves;
+	console.log("Moves: " + moves);
+}
 
 // The function that initialises a new game
 function startGame() {
@@ -82,6 +91,9 @@ function startGame() {
 				if (flippedCards.length === 2) {
 					cardTwo = flippedCards[1];
 
+					//Count the moves
+					movesCounter();
+
 					//Compare the cards
 					compareCards();
 				}
@@ -129,7 +141,9 @@ function startGame() {
 	clickCard();
 }
 
+// Start the game for the first time
 startGame();
+
 
 /*
  * Display the cards on the page
