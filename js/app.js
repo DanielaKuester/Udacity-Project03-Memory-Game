@@ -69,6 +69,7 @@ cards.forEach(function(oneCard) {
 
 			if (flippedCards.length === 1) {
 				cardOne = flippedCards[0];
+				cardOne.classList.add("disableClick");
 			}
 
 			if (flippedCards.length === 2) {
@@ -91,8 +92,8 @@ cards.forEach(function(oneCard) {
 					//Set a timeout: turn the cards after one second if they don't match
 					console.log("No match!");
 					setTimeout(function() {
-						cardOne.classList.remove("open", "show");
-						cardTwo.classList.remove("open", "show");
+						cardOne.classList.remove("open", "show", "disableClick");
+						cardTwo.classList.remove("open", "show", "disableClick");
 						flippedCards = [];
 					}, 500);
 				}
