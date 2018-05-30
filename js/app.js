@@ -31,20 +31,24 @@ const icons = [
 							"fa-bomb", "fa-bomb",
 							]
 
-/* Create the deck */
-const deck = document.querySelector(".deck");
-const allCards = document.querySelectorAll(".card");
-const cardDeck = [];
-/* Loop thrugh each card and create its html */
+function createDeck() {
+	/* Create the deck */
+	const deck = document.querySelector(".deck");
+	const allCards = document.querySelectorAll(".card");
+	const cardDeck = [];
+	/* Loop thrugh each card and create its html */
 
-for (let i = 0; i < icons.length; i ++) {
-	const oneCard = document.createElement("li");
-	oneCard.classList.add("card");
-	oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
-	deck.appendChild(oneCard);
-	cardDeck.push(oneCard);
-	console.log(oneCard);
+	for (let i = 0; i < icons.length; i ++) {
+		const oneCard = document.createElement("li");
+		oneCard.classList.add("card");
+		oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
+		deck.appendChild(oneCard);
+		cardDeck.push(oneCard);
+		console.log(oneCard);
+	}
 }
+
+createDeck();
 
 const cards = document.querySelectorAll('.card');
 let cardOne = "";
@@ -121,7 +125,6 @@ function gameOver() {
 }
 
 clickCard();
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
