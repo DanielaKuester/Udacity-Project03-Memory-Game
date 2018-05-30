@@ -160,6 +160,7 @@ restartButton.addEventListener("click", function() {
 	}
 	//TODO: 2) Reshuffle the cards
 	//TODO: 3) Reset movesCounter to 0
+	countedMoves.innerHTML = 0;
 });
 
 /*
