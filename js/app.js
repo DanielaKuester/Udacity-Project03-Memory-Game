@@ -150,18 +150,18 @@ startGame();
 
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
-	//Empty the arrays
-	flippedCards = [];
-	matchedCards = [];
 
-	//Loop through the array to turn cards around
-	for (let j = 0; j < cardDeck.length; j++) {
-		cardDeck[j].classList.remove("open", "show", "match", "disableClick");
+	//Remove all the cards from the deck
+	while (deck.firstChild) {
+  	deck.removeChild(deck.firstChild);
 	}
-	//TODO: 2) Reshuffle the cards
-	//TODO: 3) Reset movesCounter to 0
+
+	// Reset movesCounter to 0
 	moves = 0;
 	countedMoves.innerHTML = 0;
+
+	//Start new game
+	startGame();
 });
 
 /*
