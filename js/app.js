@@ -93,8 +93,8 @@ cards.forEach(function(oneCard) {
 					setTimeout(function() {
 						cardOne.classList.remove("open", "show");
 						cardTwo.classList.remove("open", "show");
-					}, 1000);
-					flippedCards = [];
+						flippedCards = [];
+					}, 500);
 				}
 				//empty the array again
 				flippedCards = [];
