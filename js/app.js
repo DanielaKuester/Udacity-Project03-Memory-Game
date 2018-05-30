@@ -146,6 +146,18 @@ function startGame() {
 // Start the game for the first time
 startGame();
 
+// Add reset button
+
+const resetButton = document.querySelector(".restart");
+resetButton.addEventListener("click", function() {
+	//Empty all arrays
+	flippedCards = [];
+	matchedCards = [];
+	cardDeck = [];
+
+	//Restart the game
+	startGame();
+});
 
 /*
  * Display the cards on the page
