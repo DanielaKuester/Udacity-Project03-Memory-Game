@@ -46,14 +46,15 @@ for (let i = 0; i < icons.length; i ++) {
 	console.log(oneCard);
 }
 
-/* Select all the cards and add one event listener for all the cards. */
 const cards = document.querySelectorAll('.card');
 let cardOne = "";
 let cardTwo = "";
 let flippedCards = [];
 let matchedCards = [];
 
-cards.forEach(function(oneCard) {
+function clickCard() {
+	/* Select all the cards and add one event listener for all the cards. */
+	cards.forEach(function(oneCard) {
 		oneCard.addEventListener('click', function (e) {
 			console.log("This card was clicked!")
 			oneCard.classList.add("open", "show");
@@ -78,8 +79,9 @@ cards.forEach(function(oneCard) {
 				//Compare the cards
 				compareCards();
 			}
-	})
-});
+		})
+	});
+}
 
 // Add a function to compare the cards
 function compareCards() {
@@ -117,6 +119,8 @@ function gameOver() {
 		alert("You win!!!");
 	}
 }
+
+clickCard();
 
 /*
  * Display the cards on the page
