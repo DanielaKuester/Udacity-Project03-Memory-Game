@@ -47,7 +47,7 @@ function createDeck() {
 	const allCards = document.querySelectorAll(".card");
 	const cardDeck = [];
 	/* Loop thrugh each card and create its html */
-
+	shuffle(icons);
 	for (let i = 0; i < icons.length; i ++) {
 		const oneCard = document.createElement("li");
 		oneCard.classList.add("card");
