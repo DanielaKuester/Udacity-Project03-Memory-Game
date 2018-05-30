@@ -40,25 +40,27 @@ function movesCounter() {
 	console.log("Moves: " + moves);
 }
 
-// The function that initialises a new game
-function startGame() {
-	function createDeck() {
-		/* Create the deck */
-		const deck = document.querySelector(".deck");
-		const allCards = document.querySelectorAll(".card");
-		const cardDeck = [];
-		/* Loop thrugh each card and create its html */
+//This function creats the deck of cards
+function createDeck() {
+	/* Create the deck */
+	const deck = document.querySelector(".deck");
+	const allCards = document.querySelectorAll(".card");
+	const cardDeck = [];
+	/* Loop thrugh each card and create its html */
 
-		for (let i = 0; i < icons.length; i ++) {
-			const oneCard = document.createElement("li");
-			oneCard.classList.add("card");
-			oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
-			deck.appendChild(oneCard);
-			cardDeck.push(oneCard);
-			console.log(oneCard);
-		}
+	for (let i = 0; i < icons.length; i ++) {
+		const oneCard = document.createElement("li");
+		oneCard.classList.add("card");
+		oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
+		deck.appendChild(oneCard);
+		cardDeck.push(oneCard);
+		console.log(oneCard);
 	}
+}
 
+// This function that initialises a new game
+function startGame() {
+	//Create the Deck
 	createDeck();
 
 	const cards = document.querySelectorAll('.card');
