@@ -150,13 +150,8 @@ startGame();
 
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
-	//Empty all arrays
-	flippedCards = [];
-	matchedCards = [];
-	cardDeck = [];
-
-	//Restart the game
-	startGame();
+	//TODO: 1) Turn the cards around to show their backs
+	//TODO: 2) Reshuffle the cards
 });
 
 /*
