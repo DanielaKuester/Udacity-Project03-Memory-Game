@@ -66,20 +66,29 @@ cards.forEach(function(oneCard) {
 				// Print an alarm if more than two items are in the array of flipped cards
 				console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
 			}
+
 			if (flippedCards.length === 1) {
 				cardOne = flippedCards[0];
 			}
+
 			if (flippedCards.length === 2) {
 				cardTwo = flippedCards[1];
+
 				//compare flippedCards
 				if (cardOne.innerHTML === cardTwo.innerHTML) {
+					/* If the cards match, add the class "match" to them and push them into
+					a new array. */
 					console.log("This is a match!");
 					cardOne.classList.add("match");
 					cardTwo.classList.add("match");
 					matchedCards.push(cardOne, cardTwo);
 					flippedCards = [];
-					//add class "match" also to the first item in the array
+
+					//Find out if all cards are matched and if the game is over
+					gameOver();
+
 				} else {
+					//Set a timeout: turn the cards after one second if they don't match
 					console.log("No match!");
 					setTimeout(function() {
 						cardOne.classList.remove("open", "show");
@@ -92,6 +101,15 @@ cards.forEach(function(oneCard) {
 			}
 	})
 });
+
+/* The function gameOver checks whether there are 16 items in the array with the
+matched cards and in the original array of cards and then decides if the game is
+finished. */
+function gameOver() {
+	if (matchedCards.length === icons.length) {
+		alert("You win!!!");
+	}
+}
 
 /*
  * Display the cards on the page
