@@ -102,8 +102,7 @@ card is flipped. */
 		margin-bottom: 10px;
 }
 
-/* Maybe add a new class that adds yellow colour to the stars as soon as the final
-score is given. Fancy bonus: Add animation to the stars. */
+/* TODO: Fancy bonus: Add animation to the stars. */
 .score-panel .stars {
 		margin: 0;
 		padding: 0;
@@ -114,6 +113,10 @@ score is given. Fancy bonus: Add animation to the stars. */
 .score-panel .stars li {
 		list-style: none;
 		display: inline-block;
+}
+
+.score-panel .stars .orange {
+		color: orange;
 }
 
 .score-panel .restart {
