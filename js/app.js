@@ -1,17 +1,9 @@
-/* TODO: What do I want to learn next?
-		1. Analyse the shuffle function from the starter code and write into comments what it does exactly. It is very important that I
-			 understand *everything* that is in my code!
- */
-
-/* TODO: What do I want to practice strategically with this project (apart from *applying* my theoretical programming knowledge)?
-	 1. Use Git branches to test out new little features in JavaScript and merge the branch into the master branch when they are working.
-	  	--> Make more effective use of Git and GitHub!
-	 2. Apply my new debugging knowledge in this project regularly.
-	 		** console.log() and console.clear()
-			** breakpoints and watches
-			** code snippets
-			** live debugging
-			--> Use the dev tools as frequent as possible!!!
+/* TODO: What do I want to implement next?
+		1. Transform the alert at the end of a game into a modal box: https://www.w3schools.com/howto/howto_css_modals.asp
+		2. Add the star rating and the restart button to the modal box / pop-up
+		3. Animate the cards accordingly to whether they match or don't match
+		4. Add animation to the cards when they are turned around
+		5. Maybe add animation to the stars in the pop-up-window
  */
 
 /*
