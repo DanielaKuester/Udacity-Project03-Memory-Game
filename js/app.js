@@ -40,6 +40,24 @@ function movesCounter() {
 	console.log("Moves: " + moves);
 }
 
+// Add the star rating functionality
+const starOne = document.getElementById("starOne");
+const starTwo = document.getElementById("starTwo");
+const starThree = document.getElementById("starThree");
+
+function starRating() {
+	if (moves <= 12) {
+		console.log("Moves: <= 12")
+	}
+	if (13 <= moves && moves <= 17) {
+		console.log("Moves: 13 < moves < 17")
+	}
+	if (moves >= 18) {
+		console.log("Moves: >= 18")
+	}
+}
+
+
 //This function creats the deck of cards
 /* Create the deck */
 const deck = document.querySelector(".deck");
@@ -95,6 +113,9 @@ function startGame() {
 
 					//Count the moves
 					movesCounter();
+
+					//Adjust star star rating
+					starRating();
 
 					//Compare the cards
 					compareCards();
@@ -187,6 +208,7 @@ function shuffle(array) {
 
 		return array;
 }
+
 
 
 /*
