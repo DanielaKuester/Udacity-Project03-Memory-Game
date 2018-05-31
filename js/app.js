@@ -46,14 +46,19 @@ const starTwo = document.getElementById("starTwo");
 const starThree = document.getElementById("starThree");
 
 function starRating() {
-	if (moves <= 12) {
-		console.log("Moves: <= 12")
+	if (moves <= 11) {
+		starOne.classList.add("orange");
+		starTwo.classList.add("orange");
+		starThree.classList.add("orange");
+		console.log("Moves: <= 11")
 	}
-	if (13 <= moves && moves <= 17) {
-		console.log("Moves: 13 < moves < 17")
+	if (12 <= moves && moves <= 16) {
+		console.log("Moves: 12 < moves < 16")
+		starThree.classList.remove("orange");
 	}
-	if (moves >= 18) {
-		console.log("Moves: >= 18")
+	if (moves >= 17) {
+		console.log("Moves: >= 17")
+		starTwo.classList.remove("orange");
 	}
 }
 
