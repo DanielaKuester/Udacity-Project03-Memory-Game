@@ -40,18 +40,18 @@ const starTwo = document.getElementById("starTwo");
 const starThree = document.getElementById("starThree");
 
 function starRating() {
-	if (moves <= 11) {
+	if (moves <= 16) {
 		starOne.classList.add("orange");
 		starTwo.classList.add("orange");
 		starThree.classList.add("orange");
-		console.log("Moves: <= 11")
+		console.log("Moves: <= 16")
 	}
-	if (12 <= moves && moves <= 16) {
-		console.log("Moves: 12 < moves < 16")
+	if (17 <= moves && moves <= 23) {
+		console.log("Moves: 17 < moves < 23")
 		starThree.classList.remove("orange");
 	}
-	if (moves >= 17) {
-		console.log("Moves: >= 17")
+	if (moves >= 24) {
+		console.log("Moves: >= 24")
 		starTwo.classList.remove("orange");
 	}
 }
