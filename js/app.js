@@ -105,13 +105,15 @@ function startGame() {
 					openCards++;
 					console.log("open cards: " + openCards);
 
+					if (openCards > 2) {
+						// Print an alarm if more than two items are in the array of flipped cards
+						console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue");
+					}
+
 					if (flippedCards.length < 2) {
 						flippedCards.push(this);
 						console.log("Length of array: " + flippedCards.length);
 						console.log("Items in flippedCards: " + flippedCards);
-					} else {
-						// Print an alarm if more than two items are in the array of flipped cards
-						console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
 					}
 
 					if (flippedCards.length === 1) {
