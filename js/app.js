@@ -88,41 +88,44 @@ function startGame() {
 	let openCards = 0;
 
 	function clickCard() {
-		/* Select all the cards and add one event listener for all the cards. */
+		/* Loop through all the cards. */
 		cards.forEach(function(oneCard) {
-			oneCard.addEventListener('click', function (e) {
-				openCards++;
-				console.log("open cards: " + openCards);
-				//console.log("This card was clicked!")
-				oneCard.classList.add("open", "show");
+			function showCards() {
+				oneCard.addEventListener('click', function (e) {
+					openCards++;
+					console.log("open cards: " + openCards);
+					//console.log("This card was clicked!")
+					oneCard.classList.add("open", "show");
 
-				if (flippedCards.length < 2) {
-					flippedCards.push(this);
-					console.log("Length of array: " + flippedCards.length);
-					console.log("Items in flippedCards: " + flippedCards);
-				} else {
-					// Print an alarm if more than two items are in the array of flipped cards
-					console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
-				}
+					if (flippedCards.length < 2) {
+						flippedCards.push(this);
+						console.log("Length of array: " + flippedCards.length);
+						console.log("Items in flippedCards: " + flippedCards);
+					} else {
+						// Print an alarm if more than two items are in the array of flipped cards
+						console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue")
+					}
 
-				if (flippedCards.length === 1) {
-					cardOne = flippedCards[0];
-					this.classList.add("disableClick");
-				}
+					if (flippedCards.length === 1) {
+						cardOne = flippedCards[0];
+						this.classList.add("disableClick");
+					}
 
-				if (flippedCards.length === 2) {
-					cardTwo = flippedCards[1];
+					if (flippedCards.length === 2) {
+						cardTwo = flippedCards[1];
 
-					//Count the moves
-					movesCounter();
+						//Count the moves
+						movesCounter();
 
-					//Adjust star star rating
-					starRating();
+						//Adjust star star rating
+						starRating();
 
-					//Compare the cards
-					compareCards();
-				}
-			})
+						//Compare the cards
+						compareCards();
+					}
+				})
+			}
+			showCards();
 		});
 	}
 
