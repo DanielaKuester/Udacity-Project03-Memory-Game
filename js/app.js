@@ -107,7 +107,7 @@ function startGame() {
 
 				if (flippedCards.length === 1) {
 					cardOne = flippedCards[0];
-					cardOne.classList.add("disableClick");
+					this.classList.add("disableClick");
 				}
 
 				if (flippedCards.length === 2) {
@@ -129,12 +129,12 @@ function startGame() {
 	// Add a function to compare the cards
 	function compareCards() {
 		//compare flippedCards
-		if (cardOne.innerHTML === cardTwo.innerHTML) {
+		if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
 			/* If the cards match, add the class "match" to them and push them into
 			a new array. */
 			console.log("This is a match!");
-			cardOne.classList.add("match");
-			cardTwo.classList.add("match");
+			flippedCards[0].classList.add("match");
+			flippedCards[1].classList.add("match");
 			matchedCards.push(cardOne, cardTwo);
 			flippedCards = [];
 
