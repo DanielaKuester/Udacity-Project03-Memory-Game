@@ -86,6 +86,26 @@ function startGame() {
 	let flippedCards = [];
 	let matchedCards = [];
 
+	/* Add a function that counts the uncovered cards and prevents clicking more
+	than three cards.*/
+	let openCards = 0;
+	function uncoveredCards() {
+		cards.forEach(function(oneCard) {
+			oneCard.addEventListener('click', function (e) {
+				if (openCards >= 2) {
+					openCards = 0;
+				}
+				else {
+					openCards ++;
+					console.log("openCards:" + openCards);
+				}
+			})
+		});
+	}
+
+	//Check for uncovered cards
+	uncoveredCards();
+
 	function clickCard() {
 		/* Select all the cards and add one event listener for all the cards. */
 		cards.forEach(function(oneCard) {
@@ -160,6 +180,8 @@ function startGame() {
 		}
 	}
 
+	//Check for uncovered cards, then allow to open other cards
+	uncoveredCards();
 	clickCard();
 }
 
