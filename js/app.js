@@ -56,6 +56,14 @@ function starRating() {
 	}
 }
 
+function limitOpenCards() {
+	if (openCards > 2) {
+		return;
+	}
+	else {
+		return;
+	}
+}
 
 //This function creats the deck of cards
 /* Create the deck */
@@ -92,10 +100,10 @@ function startGame() {
 		cards.forEach(function(oneCard) {
 			function showCards() {
 				oneCard.addEventListener('click', function (e) {
-					openCards++;
-					console.log("open cards: " + openCards);
 					//console.log("This card was clicked!")
 					oneCard.classList.add("open", "show");
+					openCards++;
+					console.log("open cards: " + openCards);
 
 					if (flippedCards.length < 2) {
 						flippedCards.push(this);
