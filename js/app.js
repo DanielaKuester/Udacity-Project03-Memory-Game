@@ -20,6 +20,30 @@ const icons = [
 	"fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb",
 ]
 
+// This variable contains the deck (the square behind the cards)
+const deck = document.querySelector(".deck");
+
+// This variable selects all the card elements
+const allCards = document.querySelectorAll(".card");
+
+// This variable creates an empty array for the newly created card deck
+const cardDeck = [];
+
+
+//This function creats the deck of cards
+function createDeck() {
+	/* Loop thrugh each card and create its html */
+	shuffle(icons);
+	for (let i = 0; i < icons.length; i ++) {
+		const oneCard = document.createElement("li");
+		oneCard.classList.add("card");
+		oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
+		deck.appendChild(oneCard);
+		cardDeck.push(oneCard);
+		console.log(oneCard);
+	}
+}
+
 // Add a function that counts the moves
 const countedMoves = document.querySelector(".moves");
 let moves = 0;
@@ -57,24 +81,6 @@ function limitOpenCards() {
 	}
 	else {
 		return;
-	}
-}
-
-//This function creats the deck of cards
-/* Create the deck */
-const deck = document.querySelector(".deck");
-const allCards = document.querySelectorAll(".card");
-const cardDeck = [];
-function createDeck() {
-	/* Loop thrugh each card and create its html */
-	shuffle(icons);
-	for (let i = 0; i < icons.length; i ++) {
-		const oneCard = document.createElement("li");
-		oneCard.classList.add("card");
-		oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
-		deck.appendChild(oneCard);
-		cardDeck.push(oneCard);
-		console.log(oneCard);
 	}
 }
 
