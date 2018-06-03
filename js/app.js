@@ -15,15 +15,10 @@
 /* An array with the variables that contain the FontAwesome Icons. I need 16 cards
 so I have to add every icon twice. */
 const icons = [
-							"fa-diamond", "fa-diamond",
-							"fa-paper-plane-o", "fa-paper-plane-o",
-							"fa-anchor", "fa-anchor",
-							"fa-bolt", "fa-bolt",
-							"fa-cube", "fa-cube",
-							"fa-leaf", "fa-leaf",
-							"fa-bicycle", "fa-bicycle",
-							"fa-bomb", "fa-bomb",
-						]
+	"fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o",
+	"fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube",
+	"fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb",
+]
 
 // Add a function that counts the moves
 const countedMoves = document.querySelector(".moves");
