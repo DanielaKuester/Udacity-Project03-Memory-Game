@@ -131,12 +131,12 @@ function startGame() {
 
 	function clickCard() {
 		/* Loop through all the cards. */
-		cards.forEach(function(singleCard) {
 
+		for (let i = 0; i < cards.length; i++) {
 			function showCards() {
-				singleCard.addEventListener('click', function (e) {
+				cards[i].addEventListener('click', function (e) {
 					//console.log("This card was clicked!")
-					singleCard.classList.add("open", "show");
+					cards[i].classList.add("open", "show");
 					openCards++;
 					console.log("open cards: " + openCards);
 
@@ -163,6 +163,11 @@ function startGame() {
 				})
 			}
 			showCards();
+		}
+
+		cards.forEach(function(singleCard) {
+
+
 		});
 	}
 
