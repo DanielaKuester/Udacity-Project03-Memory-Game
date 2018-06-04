@@ -133,39 +133,40 @@ function startGame() {
 		/* Loop through all the cards. */
 
 		for (let i = 0; i < cards.length; i++) {
+			function openCards() {
+				//console.log("This card was clicked!")
+				cards[i].classList.add("open", "show");
+				openedCards++;
+				console.log("opened cards: " + openedCards);
+			}
+			function pushCards() {
+				if (openedCards > 2) {
+					// Print an alarm if more than two items are in the array of flipped cards
+					console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue");
+				}
+
+				if (flippedCards.length < 2) {
+					flippedCards.push(cards[i]);
+					console.log("Length of array: " + flippedCards.length);
+					console.log("Items in flippedCards: " + flippedCards);
+				}
+
+				if (flippedCards.length === 1) {
+					cards[i].classList.add("disableClick");
+				}
+				if (flippedCards.length === 2) {
+					cardOne = flippedCards[0];
+					cardTwo = flippedCards[1];
+					pairCards();
+				}
+			}
 			function clickEventListener() {
 				cards[i].addEventListener('click', openCards);
 				cards[i].addEventListener('click', pushCards);
-				function openCards() {
-					//console.log("This card was clicked!")
-					cards[i].classList.add("open", "show");
-					openedCards++;
-					console.log("opened cards: " + openedCards);
-				}
-				function pushCards() {
-					if (openedCards > 2) {
-						// Print an alarm if more than two items are in the array of flipped cards
-						console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue");
-					}
-
-					if (flippedCards.length < 2) {
-						flippedCards.push(cards[i]);
-						console.log("Length of array: " + flippedCards.length);
-						console.log("Items in flippedCards: " + flippedCards);
-					}
-
-					if (flippedCards.length === 1) {
-						cards[i].classList.add("disableClick");
-					}
-					if (flippedCards.length === 2) {
-						cardOne = flippedCards[0];
-						cardTwo = flippedCards[1];
-						pairCards();
-					}
-				}
 			}
 			clickEventListener();
 		}
+
 	}
 
 	// When two cards are in the flippedCards-array, call this function
