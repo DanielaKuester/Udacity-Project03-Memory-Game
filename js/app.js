@@ -193,13 +193,17 @@ function startGame() {
 			cardsMatch();
 
 		} else {
-			//Set a timeout: turn the cards after one second if they don't match
-			console.log("No match!");
-			setTimeout(function() {
-				cardOne.classList.remove("open", "show", "disableClick");
-				cardTwo.classList.remove("open", "show", "disableClick");
-				flippedCards = [];
-			}, 500);
+
+			function noMatch() {
+				//Set a timeout: turn the cards after one second if they don't match
+				console.log("No match!");
+				setTimeout(function() {
+					cardOne.classList.remove("open", "show", "disableClick");
+					cardTwo.classList.remove("open", "show", "disableClick");
+					flippedCards = [];
+				}, 500);
+			}
+			noMatch();
 		}
 		//empty the array again
 		flippedCards = [];
