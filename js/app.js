@@ -29,11 +29,7 @@ const allCards = document.querySelectorAll(".card");
 // This variable creates an empty array for the newly created card deck
 const cardDeck = [];
 
-
-//This function creats the deck of cards
-function createDeck() {
-	/* Loop thrugh each card and create its html */
-	shuffle(icons);
+function createCard() {
 	for (let i = 0; i < icons.length; i ++) {
 		const oneCard = document.createElement("li");
 		oneCard.classList.add("card");
@@ -42,6 +38,14 @@ function createDeck() {
 		cardDeck.push(oneCard);
 		console.log(oneCard);
 	}
+}
+
+//This function creats the deck of cards
+function createDeck() {
+	// Shuffle the items in the icons array
+	shuffle(icons);
+	/* Loop thrugh each card and create its html */
+	createCard();
 }
 
 // Add a function that counts the moves
