@@ -132,6 +132,7 @@ function startGame() {
 	function clickCard() {
 		/* Loop through all the cards. */
 		cards.forEach(function(singleCard) {
+
 			function showCards() {
 				singleCard.addEventListener('click', function (e) {
 					//console.log("This card was clicked!")
@@ -156,26 +157,28 @@ function startGame() {
 
 					if (flippedCards.length === 2) {
 
-						function pairCards() {
-							cardOne = flippedCards[0];
-							cardTwo = flippedCards[1];
-
-							//Count the moves
-							movesCounter();
-
-							//Adjust star star rating
-							starRating();
-
-							//Compare the cards
-							compareCards();
-						}
 						pairCards();
-						
+
 					}
 				})
 			}
 			showCards();
 		});
+	}
+
+	// When two cards are in the flippedCards-array, call this function
+	function pairCards() {
+		cardOne = flippedCards[0];
+		cardTwo = flippedCards[1];
+
+		//Count the moves
+		movesCounter();
+
+		//Adjust star star rating
+		starRating();
+
+		//Compare the cards
+		compareCards();
 	}
 
 	// When both cards match, call this function
