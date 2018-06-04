@@ -133,7 +133,7 @@ function startGame() {
 		/* Loop through all the cards. */
 
 		for (let i = 0; i < cards.length; i++) {
-			function showCards() {
+			function clickEventListener() {
 
 				cards[i].addEventListener('click', function (e) {
 					openCards();
@@ -167,7 +167,7 @@ function startGame() {
 					}
 				}
 			}
-			showCards();
+			clickEventListener();
 		}
 	}
 
