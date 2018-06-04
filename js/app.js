@@ -134,11 +134,8 @@ function startGame() {
 
 		for (let i = 0; i < cards.length; i++) {
 			function clickEventListener() {
-
-				cards[i].addEventListener('click', function (e) {
-					openCards();
-					pushCards();
-				})
+				cards[i].addEventListener('click', openCards);
+				cards[i].addEventListener('click', pushCards);
 				function openCards() {
 					//console.log("This card was clicked!")
 					cards[i].classList.add("open", "show");
