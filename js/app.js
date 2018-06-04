@@ -115,17 +115,19 @@ function limitOpenCards() {
 	}
 }
 
+// Declare variables for the clickCard function
+let openCards = 0;
+let cardOne = "";
+let cardTwo = "";
+let flippedCards = [];
+let matchedCards = [];
+
 // This function that initialises a new game
 function startGame() {
 	//Create the Deck
 	createDeck();
 
 	const cards = document.querySelectorAll('.card');
-	let cardOne = "";
-	let cardTwo = "";
-	let flippedCards = [];
-	let matchedCards = [];
-	let openCards = 0;
 
 	function clickCard() {
 		/* Loop through all the cards. */
