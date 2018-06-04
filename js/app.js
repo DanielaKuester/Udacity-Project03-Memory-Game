@@ -117,10 +117,10 @@ function limitOpenCards() {
 
 // Declare variables for the clickCard function
 let openCards = 0;
-let cardOne = "";
-let cardTwo = "";
 let flippedCards = [];
 let matchedCards = [];
+let cardOne = flippedCards[0];
+let cardTwo = flippedCards[1];
 
 // This function that initialises a new game
 function startGame() {
@@ -151,11 +151,12 @@ function startGame() {
 					}
 
 					if (flippedCards.length === 1) {
-						cardOne = flippedCards[0];
 						this.classList.add("disableClick");
 					}
 
 					if (flippedCards.length === 2) {
+
+						cardOne = flippedCards[0];
 						cardTwo = flippedCards[1];
 
 						//Count the moves
