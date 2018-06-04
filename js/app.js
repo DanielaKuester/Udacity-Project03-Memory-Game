@@ -160,17 +160,15 @@ function startGame() {
 						if (flippedCards.length === 1) {
 							cards[i].classList.add("disableClick");
 						}
+						if (flippedCards.length === 2) {
+							cardOne = flippedCards[0];
+							cardTwo = flippedCards[1];
+							pairCards();
+						}
 					}
 					pushCards();
-
-
-					if (flippedCards.length === 2) {
-
-						pairCards();
-
-					}
 				})
-				
+
 			}
 			showCards();
 		}
@@ -178,8 +176,6 @@ function startGame() {
 
 	// When two cards are in the flippedCards-array, call this function
 	function pairCards() {
-		cardOne = flippedCards[0];
-		cardTwo = flippedCards[1];
 
 		//Count the moves
 		movesCounter();
