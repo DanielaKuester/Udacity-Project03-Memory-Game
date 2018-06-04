@@ -106,8 +106,8 @@ function starRating() {
 	}
 }
 
-function limitOpenCards() {
-	if (openCards > 2) {
+function limitOpenedCards() {
+	if (openedCards > 2) {
 		return;
 	}
 	else {
@@ -116,7 +116,7 @@ function limitOpenCards() {
 }
 
 // Declare variables for the clickCard function
-let openCards = 0;
+let openedCards = 0;
 let flippedCards = [];
 let matchedCards = [];
 let cardOne = flippedCards[0];
@@ -137,11 +137,11 @@ function startGame() {
 				cards[i].addEventListener('click', function (e) {
 					//console.log("This card was clicked!")
 					cards[i].classList.add("open", "show");
-					openCards++;
-					console.log("open cards: " + openCards);
+					openedCards++;
+					console.log("opened cards: " + openedCards);
 
 					function pushCards() {
-						if (openCards > 2) {
+						if (openedCards > 2) {
 							// Print an alarm if more than two items are in the array of flipped cards
 							console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue");
 						}
