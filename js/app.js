@@ -164,7 +164,16 @@ function startGame() {
 				cards[i].addEventListener('click', openCards);
 				cards[i].addEventListener('click', pushCards);
 			}
-			clickEventListener();
+			function removeEventListener() {
+				cards[i].removeEventListener('click', openCards);
+				cards[i].removeEventListener('click', pushCards);
+			}
+			if (flippedCards.length >= 2) {
+				removeEventListener();
+			}
+			else {
+				clickEventListener();
+			}
 		}
 
 	}
