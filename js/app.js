@@ -156,17 +156,21 @@ function startGame() {
 
 					if (flippedCards.length === 2) {
 
-						cardOne = flippedCards[0];
-						cardTwo = flippedCards[1];
+						function pairCards() {
+							cardOne = flippedCards[0];
+							cardTwo = flippedCards[1];
 
-						//Count the moves
-						movesCounter();
+							//Count the moves
+							movesCounter();
 
-						//Adjust star star rating
-						starRating();
+							//Adjust star star rating
+							starRating();
 
-						//Compare the cards
-						compareCards();
+							//Compare the cards
+							compareCards();
+						}
+						pairCards();
+						
 					}
 				})
 			}
