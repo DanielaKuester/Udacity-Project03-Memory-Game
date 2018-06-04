@@ -134,11 +134,16 @@ function startGame() {
 
 		for (let i = 0; i < cards.length; i++) {
 			function showCards() {
+
 				cards[i].addEventListener('click', function (e) {
-					//console.log("This card was clicked!")
-					cards[i].classList.add("open", "show");
-					openedCards++;
-					console.log("opened cards: " + openedCards);
+
+					function openCards() {
+						//console.log("This card was clicked!")
+						cards[i].classList.add("open", "show");
+						openedCards++;
+						console.log("opened cards: " + openedCards);
+					}
+					openCards();
 
 					function pushCards() {
 						if (openedCards > 2) {
@@ -165,6 +170,7 @@ function startGame() {
 
 					}
 				})
+				
 			}
 			showCards();
 		}
