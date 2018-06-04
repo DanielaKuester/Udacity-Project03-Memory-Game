@@ -173,37 +173,42 @@ function startGame() {
 		});
 	}
 
+	// When both cards match, call this function
+	function cardsMatch() {
+		/* If the cards match, add the class "match" to them and push them into
+		a new array. */
+		console.log("This is a match!");
+		flippedCards[0].classList.add("match");
+		flippedCards[1].classList.add("match");
+		matchedCards.push(cardOne, cardTwo);
+		flippedCards = [];
+
+		//Find out if all cards are matched and if the game is over
+		gameOver();
+	}
+
+	// When both cards don't match, call this function
+	function noMatch() {
+		//Set a timeout: turn the cards after one second if they don't match
+		console.log("No match!");
+		setTimeout(function() {
+			cardOne.classList.remove("open", "show", "disableClick");
+			cardTwo.classList.remove("open", "show", "disableClick");
+			flippedCards = [];
+		}, 500);
+	}
+
 	// Add a function to compare the cards
 	function compareCards() {
 		//compare flippedCards
 		if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
 
-			function cardsMatch() {
-				/* If the cards match, add the class "match" to them and push them into
-				a new array. */
-				console.log("This is a match!");
-				flippedCards[0].classList.add("match");
-				flippedCards[1].classList.add("match");
-				matchedCards.push(cardOne, cardTwo);
-				flippedCards = [];
-
-				//Find out if all cards are matched and if the game is over
-				gameOver();
-			}
 			cardsMatch();
 
 		} else {
 
-			function noMatch() {
-				//Set a timeout: turn the cards after one second if they don't match
-				console.log("No match!");
-				setTimeout(function() {
-					cardOne.classList.remove("open", "show", "disableClick");
-					cardTwo.classList.remove("open", "show", "disableClick");
-					flippedCards = [];
-				}, 500);
-			}
-			noMatch();
+				noMatch();
+
 		}
 		//empty the array again
 		flippedCards = [];
