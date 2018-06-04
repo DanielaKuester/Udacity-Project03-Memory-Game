@@ -164,11 +164,6 @@ function startGame() {
 			}
 			showCards();
 		}
-
-		cards.forEach(function(singleCard) {
-
-
-		});
 	}
 
 	// When two cards are in the flippedCards-array, call this function
