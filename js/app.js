@@ -278,6 +278,11 @@ restartButton.addEventListener("click", function() {
 	moves = 0;
 	countedMoves.innerHTML = 0;
 
+	// Reset stars rating to three orange stars
+	starOne.classList.add("orange");
+	starTwo.classList.add("orange");
+	starThree.classList.add("orange");
+
 	//Start new game
 	startGame();
 });
