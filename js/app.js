@@ -195,6 +195,9 @@ function startGame() {
 	function cardsMatch() {
 		/* If the cards match, add the class "match" to them and push them into
 		a new array. */
+		for (let i = 0; cards.length < i; i++) {
+			cards[i].classList.add("disableClick");
+		}
 		console.log("This is a match!");
 		flippedCards[0].classList.add("match");
 		flippedCards[1].classList.add("match");
@@ -209,10 +212,13 @@ function startGame() {
 	function noMatch() {
 		//Set a timeout: turn the cards after one second if they don't match
 		console.log("No match!");
+		flippedCards = [];
+		for (let i = 0; cards.length < i; i++) {
+			cards[i].classList.add("disableClick");
+		}
 		setTimeout(function() {
 			cardOne.classList.remove("open", "show", "disableClick");
 			cardTwo.classList.remove("open", "show", "disableClick");
-			flippedCards = [];
 		}, 500);
 	}
 
