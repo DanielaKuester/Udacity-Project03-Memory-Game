@@ -135,9 +135,16 @@ function startGame() {
 		for (let i = 0; i < cards.length; i++) {
 			function openCards() {
 				//console.log("This card was clicked!")
-				cards[i].classList.add("open", "show");
-				openedCards++;
-				console.log("opened cards: " + openedCards);
+				if (flippedCards === 2) {
+					for (let i = 0; cards.length < i; i++) {
+						cards[i].classList.add("disableClick");
+					}
+				}
+				else {
+					cards[i].classList.add("open", "show");
+					openedCards++;
+					console.log("opened cards: " + openedCards);
+				}
 			}
 			function pushCards() {
 				if (openedCards > 2) {
@@ -155,6 +162,9 @@ function startGame() {
 					cards[i].classList.add("disableClick");
 				}
 				if (flippedCards.length === 2) {
+					for (let i = 0; cards.length < i; i++) {
+						cards[i].classList.add("disableClick");
+					}
 					cardOne = flippedCards[0];
 					cardTwo = flippedCards[1];
 					pairCards();
