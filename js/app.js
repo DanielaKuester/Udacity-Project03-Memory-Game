@@ -229,7 +229,7 @@ function startGame() {
 		setTimeout(function() {
 			cardOne.classList.remove("open", "show", "disableClick");
 			cardTwo.classList.remove("open", "show", "disableClick");
-		}, 500);
+		}, 200);
 	}
 
 	// Add a function to compare the cards
