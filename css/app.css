@@ -99,7 +99,7 @@ card is flipped. */
 .score-panel {
 		text-align: left;
 		font-size: 2em;
-		width: 480px;
+		width: 640px;
 		margin-bottom: 10px;
 		display: flex;
 		flex-wrap: wrap;
