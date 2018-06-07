@@ -84,13 +84,21 @@ function movesCounter() {
 	console.log("Moves: " + moves);
 }
 
+let minutes = document.querySelector(".minutes");
+let seconds = document.querySelector(".seconds");
 let minute = 0;
-let seconds = 0;
-let increment = 60;
+let second = 0;
+let increment;
 
 // Add a function to start the timer
 function startTimer() {
-
+	// Implement the interval by which the timer should increase
+	let increment = setInterval(function() {
+		minute++;
+		minutes.innerHTML = minute;
+		second++;
+		seconds.innerHTML = second;
+	}, 1000);
 }
 
 // Add the star rating functionality
@@ -150,6 +158,9 @@ function startGame() {
 					}
 				}
 				else {
+					if (openedCards === 1) {
+						startTimer();
+					}
 					cards[i].classList.add("open", "show");
 					openedCards++;
 					console.log("opened cards: " + openedCards);
@@ -286,6 +297,7 @@ restartButton.addEventListener("click", function() {
 	// Reset movesCounter to 0
 	moves = 0;
 	countedMoves.innerHTML = 0;
+	openedCards = 0;
 
 	// Reset stars rating to three orange stars
 	starOne.classList.add("orange");
