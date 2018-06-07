@@ -82,7 +82,8 @@ function movesCounter() {
 	moves++;
 	countedMoves.innerHTML = moves;
 	console.log("Moves: " + moves);
-	if (moves = 1) {
+	// Sets the point where the timer starts
+	if (moves == 1) {
 		second = 0;
 		minute = 0;
 		startTimer();

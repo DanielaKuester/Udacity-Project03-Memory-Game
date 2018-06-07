@@ -98,13 +98,17 @@ card is flipped. */
 
 .score-panel {
 		text-align: left;
-		font-size: 2em;
+		font-size: 1.7em;
 		width: 640px;
 		margin-bottom: 10px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		/*align-items: center;*/
+}
+
+.score-panel .timer {
+		width: 280px;
 }
 
 /* TODO: Fancy bonus: Add animation to the stars. */
