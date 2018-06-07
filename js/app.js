@@ -82,6 +82,11 @@ function movesCounter() {
 	moves++;
 	countedMoves.innerHTML = moves;
 	console.log("Moves: " + moves);
+	if (moves = 1) {
+		second = 0;
+		minute = 0;
+		startTimer();
+	}
 }
 
 let minutes = document.querySelector(".minutes");
@@ -94,10 +99,13 @@ let increment;
 function startTimer() {
 	// Implement the interval by which the timer should increase
 	let increment = setInterval(function() {
-		minute++;
-		minutes.innerHTML = minute;
 		second++;
 		seconds.innerHTML = second;
+		minutes.innerHTML = minute;
+		if (second == 59) {
+			second = -1;
+			minute++;
+		}
 	}, 1000);
 }
 
@@ -151,6 +159,11 @@ function startGame() {
 
 		for (let i = 0; i < cards.length; i++) {
 			function openCards() {
+				/*if (openedCards = 1) {
+					second = 0;
+					minute = 0;
+					startTimer();
+				}*/
 				//console.log("This card was clicked!")
 				if (flippedCards === 2) {
 					for (let i = 0; cards.length < i; i++) {
@@ -158,9 +171,6 @@ function startGame() {
 					}
 				}
 				else {
-					if (openedCards === 1) {
-						startTimer();
-					}
 					cards[i].classList.add("open", "show");
 					openedCards++;
 					console.log("opened cards: " + openedCards);
