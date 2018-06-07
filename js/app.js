@@ -84,6 +84,15 @@ function movesCounter() {
 	console.log("Moves: " + moves);
 }
 
+let minute = 0;
+let seconds = 0;
+let increment = 60;
+
+// Add a function to start the timer
+function startTimer() {
+
+}
+
 // Add the star rating functionality
 const starOne = document.getElementById("starOne");
 const starTwo = document.getElementById("starTwo");
