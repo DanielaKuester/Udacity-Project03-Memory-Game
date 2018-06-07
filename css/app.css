@@ -99,8 +99,12 @@ card is flipped. */
 .score-panel {
 		text-align: left;
 		font-size: 2em;
-		width: 345px;
+		width: 480px;
 		margin-bottom: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		/*align-items: center;*/
 }
 
 /* TODO: Fancy bonus: Add animation to the stars. */
@@ -121,6 +125,6 @@ card is flipped. */
 }
 
 .score-panel .restart {
-		float: right;
+		/*float: right;*/
 		cursor: pointer;
 }
