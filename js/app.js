@@ -62,7 +62,6 @@ function createCard() {
 		oneCard.innerHTML = "<i class=" + "'fa " + icons[i] + "'></i>";
 		deck.appendChild(oneCard);
 		cardDeck.push(oneCard);
-		console.log(oneCard);
 	}
 }
 
@@ -81,12 +80,15 @@ let moves = 0;
 function movesCounter() {
 	moves++;
 	countedMoves.innerHTML = moves;
-	console.log("Moves: " + moves);
 	// Sets the point where the timer starts
 	if (moves == 1) {
 		second = 0;
 		minute = 0;
 		startTimer();
+	}
+
+	if (matchedCards.length === 16) {
+		clearInterval(interval);
 	}
 }
 
@@ -121,14 +123,11 @@ function starRating() {
 		starOne.classList.add("orange");
 		starTwo.classList.add("orange");
 		starThree.classList.add("orange");
-		console.log("Moves: <= 16")
 	}
 	if (17 <= moves && moves <= 23) {
-		console.log("Moves: 17 < moves < 23")
 		starThree.classList.remove("orange");
 	}
 	if (moves >= 24) {
-		console.log("Moves: >= 24")
 		starTwo.classList.remove("orange");
 	}
 }
@@ -161,12 +160,6 @@ function startGame() {
 
 		for (let i = 0; i < cards.length; i++) {
 			function openCards() {
-				/*if (openedCards = 1) {
-					second = 0;
-					minute = 0;
-					startTimer();
-				}*/
-				//console.log("This card was clicked!")
 				if (flippedCards === 2) {
 					for (let i = 0; cards.length < i; i++) {
 						cards[i].classList.add("disableClick");
@@ -175,19 +168,11 @@ function startGame() {
 				else {
 					cards[i].classList.add("open", "show");
 					openedCards++;
-					console.log("opened cards: " + openedCards);
 				}
 			}
 			function pushCards() {
-				if (openedCards > 2) {
-					// Print an alarm if more than two items are in the array of flipped cards
-					console.log("%c Alert - Too many items in array!!!",  "color: white; background: blue");
-				}
-
 				if (flippedCards.length < 2) {
 					flippedCards.push(cards[i]);
-					console.log("Length of array: " + flippedCards.length);
-					console.log("Items in flippedCards: " + flippedCards);
 				}
 
 				if (flippedCards.length === 1) {
@@ -240,7 +225,6 @@ function startGame() {
 		for (let i = 0; cards.length < i; i++) {
 			cards[i].classList.add("disableClick");
 		}
-		console.log("This is a match!");
 		flippedCards[0].classList.add("match");
 		flippedCards[1].classList.add("match");
 		matchedCards.push(cardOne, cardTwo);
@@ -253,7 +237,6 @@ function startGame() {
 	// When both cards don't match, call this function
 	function noMatch() {
 		//Set a timeout: turn the cards after one second if they don't match
-		console.log("No match!");
 		flippedCards = [];
 		for (let i = 0; cards.length < i; i++) {
 			cards[i].classList.add("disableClick");
@@ -310,7 +293,24 @@ restartButton.addEventListener("click", function() {
 	moves = 0;
 	countedMoves.innerHTML = 0;
 	openedCards = 0;
+	flippedCards = [];
+	matchedCards = [];
 
+/*
+	// Reset timer
+	clearInterval(interval);
+	minutes.innerHTML = minute;
+	seconds.innerHTML = second;
+	minutes.innerHTML = 0;
+	seconds.innerHTML = 0;
+
+	// Restart timer
+	if (moves == 1) {
+		second = 0;
+		minute = 0;
+		startTimer();
+	}
+*/
 	// Reset stars rating to three orange stars
 	starOne.classList.add("orange");
 	starTwo.classList.add("orange");
