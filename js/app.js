@@ -88,7 +88,7 @@ function movesCounter() {
 	}
 
 	if (matchedCards.length === 16) {
-		clearInterval(interval);
+		clearInterval(increment);
 	}
 }
 
@@ -100,17 +100,22 @@ let increment;
 
 // Add a function to start the timer
 function startTimer() {
-	// Implement the interval by which the timer should increase
-	let increment = setInterval(function() {
-		second++;
-		minutes.innerHTML = minute;
-		seconds.innerHTML = second;
-		if (second == 59) {
-			minute++;
-			//seconds.innerHTML = -4;
-			second = -1;
-		}
-	}, 1000);
+	if (matchedCards.length < 16) {
+		// Implement the interval by which the timer should increase
+		let increment = setInterval(function() {
+			second++;
+			minutes.innerHTML = minute;
+			seconds.innerHTML = second;
+			if (second == 59) {
+				minute++;
+				//seconds.innerHTML = -4;
+				second = -1;
+			}
+		}, 1000);
+	}
+	if (matchedCards.length == 16) {
+		clearInterval(increment);
+	}
 }
 
 // Add the star rating functionality
