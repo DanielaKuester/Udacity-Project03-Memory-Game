@@ -101,11 +101,12 @@ function startTimer() {
 	// Implement the interval by which the timer should increase
 	let increment = setInterval(function() {
 		second++;
-		seconds.innerHTML = second;
 		minutes.innerHTML = minute;
+		seconds.innerHTML = second;
 		if (second == 59) {
-			second = -1;
 			minute++;
+			//seconds.innerHTML = -4;
+			second = -1;
 		}
 	}, 1000);
 }
