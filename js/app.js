@@ -86,10 +86,6 @@ function movesCounter() {
 		minute = 0;
 		startTimer();
 	}
-
-	if (matchedCards.length === 16) {
-		clearInterval(increment);
-	}
 }
 
 let minutes = document.querySelector(".minutes");
@@ -98,7 +94,7 @@ let minute = 0;
 let second = 0;
 let increment;
 
-// Add a function to start the timer
+// Add a function with the timer
 function startTimer() {
 	if (matchedCards.length < 16) {
 		// Implement the interval by which the timer should increase
@@ -113,8 +109,14 @@ function startTimer() {
 			}
 		}, 1000);
 	}
-	if (matchedCards.length == 16) {
+	else {
 		clearInterval(increment);
+		minutes.innerHTML = minute;
+		seconds.innerHTML = second;
+		minutes.innerHTML = 0;
+		seconds.innerHTML = 0;
+		minute = 0;
+		second = 0;
 	}
 }
 
@@ -301,13 +303,20 @@ restartButton.addEventListener("click", function() {
 	flippedCards = [];
 	matchedCards = [];
 
-/*
+	// Reset stars rating to three orange stars
+	starOne.classList.add("orange");
+	starTwo.classList.add("orange");
+	starThree.classList.add("orange");
+
 	// Reset timer
-	clearInterval(interval);
+	clearInterval(increment);
 	minutes.innerHTML = minute;
 	seconds.innerHTML = second;
 	minutes.innerHTML = 0;
 	seconds.innerHTML = 0;
+
+	//Start new game
+	startGame();
 
 	// Restart timer
 	if (moves == 1) {
@@ -315,14 +324,7 @@ restartButton.addEventListener("click", function() {
 		minute = 0;
 		startTimer();
 	}
-*/
-	// Reset stars rating to three orange stars
-	starOne.classList.add("orange");
-	starTwo.classList.add("orange");
-	starThree.classList.add("orange");
 
-	//Start new game
-	startGame();
 });
 
 
