@@ -111,12 +111,8 @@ function startTimer() {
 	}
 	else {
 		clearInterval(increment);
-		minutes.innerHTML = minute;
-		seconds.innerHTML = second;
-		minutes.innerHTML = 0;
-		seconds.innerHTML = 0;
 		minute = 0;
-		second = 0;
+		second = -1;
 	}
 }
 
@@ -309,11 +305,9 @@ restartButton.addEventListener("click", function() {
 	starThree.classList.add("orange");
 
 	// Reset timer
+	minute = 0;
+	second = 0;
 	clearInterval(increment);
-	minutes.innerHTML = minute;
-	seconds.innerHTML = second;
-	minutes.innerHTML = 0;
-	seconds.innerHTML = 0;
 
 	//Start new game
 	startGame();
