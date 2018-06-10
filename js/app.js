@@ -29,6 +29,31 @@ const allCards = document.querySelectorAll(".card");
 // This variable creates an empty array for the newly created card deck
 const cardDeck = [];
 
+// These variables are needed for the timer
+let minutes = document.querySelector(".minutes");
+let seconds = document.querySelector(".seconds");
+let minute = 0;
+let second = 0;
+let increment;
+
+// Declare variables for the clickCard function
+let openedCards = 0;
+let flippedCards = [];
+let matchedCards = [];
+let cardOne = flippedCards[0];
+let cardTwo = flippedCards[1];
+
+// Variables for the moves counter
+const countedMoves = document.querySelector(".moves");
+let moves = 0;
+
+// The stars for the star rating
+const starOne = document.getElementById("starOne");
+const starTwo = document.getElementById("starTwo");
+const starThree = document.getElementById("starThree");
+
+const cards = document.querySelectorAll('.card');
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -37,7 +62,6 @@ const cardDeck = [];
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-
 
 function shuffle(array) {
 		var currentIndex = array.length, temporaryValue, randomIndex;
@@ -53,7 +77,6 @@ function shuffle(array) {
 		return array;
 }
 
-
 // This function creates the cards
 function createCard() {
 	for (let i = 0; i < icons.length; i ++) {
@@ -65,7 +88,6 @@ function createCard() {
 	}
 }
 
-
 //This function creats the deck of cards
 function createDeck() {
 	// Shuffle the items in the icons array
@@ -74,25 +96,129 @@ function createDeck() {
 	createCard();
 }
 
+// This function runs when a card is clicked
+function clickCard() {
+	const cards = document.querySelectorAll('.card');
+	/* Loop through all the cards. */
+	for (let i = 0; i < cards.length; i++) {
+		function openCards() {
+			if (flippedCards === 2) {
+				for (let i = 0; cards.length < i; i++) {
+					cards[i].classList.add("disableClick");
+				}
+			}
+			else {
+				cards[i].classList.add("open", "show");
+				openedCards++;
+			}
+		}
+		function pushCards() {
+			if (flippedCards.length < 2) {
+				flippedCards.push(cards[i]);
+			}
+
+			if (flippedCards.length === 1) {
+				cards[i].classList.add("disableClick");
+			}
+			if (flippedCards.length === 2) {
+				for (let i = 0; cards.length < i; i++) {
+					cards[i].classList.add("disableClick");
+				}
+				cardOne = flippedCards[0];
+				cardTwo = flippedCards[1];
+				pairCards();
+			}
+		}
+		function clickEventListener() {
+			cards[i].addEventListener('click', openCards);
+			cards[i].addEventListener('click', pushCards);
+		}
+		function removeEventListener() {
+			cards[i].removeEventListener('click', openCards);
+			cards[i].removeEventListener('click', pushCards);
+		}
+		if (flippedCards.length >= 2) {
+			removeEventListener();
+		}
+		else {
+			clickEventListener();
+		}
+	}
+}
+
+// When both cards match, call this function
+function cardsMatch() {
+	/* If the cards match, add the class "match" to them and push them into
+	a new array. */
+	for (let i = 0; cards.length < i; i++) {
+		cards[i].classList.add("disableClick");
+	}
+	flippedCards[0].classList.add("match");
+	flippedCards[1].classList.add("match");
+	matchedCards.push(cardOne, cardTwo);
+	flippedCards = [];
+
+	//Find out if all cards are matched and if the game is over
+	gameOver();
+}
+
+// When both cards don't match, call this function
+function noMatch() {
+	//Set a timeout: turn the cards after one second if they don't match
+	flippedCards = [];
+	for (let i = 0; cards.length < i; i++) {
+		cards[i].classList.add("disableClick");
+	}
+	setTimeout(function() {
+		cardOne.classList.remove("open", "show", "disableClick");
+		cardTwo.classList.remove("open", "show", "disableClick");
+	}, 200);
+}
+
+// Add a function to compare the cards
+function compareCards() {
+	//compare flippedCards
+	if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
+
+		cardsMatch();
+
+	} else {
+
+			noMatch();
+
+	}
+	//empty the array again
+	flippedCards = [];
+}
+
+// When two cards are in the flippedCards-array, call this function
+function pairCards() {
+
+	//Count the moves
+	movesCounter();
+
+	//Adjust star star rating
+	starRating();
+
+	//Compare the cards
+	compareCards();
+}
+
 // Add a function that counts the moves
-const countedMoves = document.querySelector(".moves");
-let moves = 0;
 function movesCounter() {
 	moves++;
 	countedMoves.innerHTML = moves;
 	// Sets the point where the timer starts
+	if (moves == 0) {
+		second = 0;
+		minute = 0;
+	}
 	if (moves == 1) {
 		second = 0;
 		minute = 0;
 		startTimer();
 	}
 }
-
-let minutes = document.querySelector(".minutes");
-let seconds = document.querySelector(".seconds");
-let minute = 0;
-let second = 0;
-let increment;
 
 // Add a function with the timer
 function startTimer() {
@@ -117,10 +243,6 @@ function startTimer() {
 }
 
 // Add the star rating functionality
-const starOne = document.getElementById("starOne");
-const starTwo = document.getElementById("starTwo");
-const starThree = document.getElementById("starThree");
-
 function starRating() {
 	if (moves <= 16) {
 		starOne.classList.add("orange");
@@ -135,6 +257,7 @@ function starRating() {
 	}
 }
 
+/* A function that can help me in the future to limit the opened cards
 function limitOpenedCards() {
 	if (openedCards > 2) {
 		return;
@@ -143,137 +266,19 @@ function limitOpenedCards() {
 		return;
 	}
 }
+*/
 
-// Declare variables for the clickCard function
-let openedCards = 0;
-let flippedCards = [];
-let matchedCards = [];
-let cardOne = flippedCards[0];
-let cardTwo = flippedCards[1];
+/* When 16 cards are matched, the game is finished */
+function gameOver() {
+	if (matchedCards.length === icons.length) {
+		alert("You win!!!");
+	}
+}
 
 // This function that initialises a new game
 function startGame() {
 	//Create the Deck
 	createDeck();
-
-	const cards = document.querySelectorAll('.card');
-
-	function clickCard() {
-		/* Loop through all the cards. */
-
-		for (let i = 0; i < cards.length; i++) {
-			function openCards() {
-				if (flippedCards === 2) {
-					for (let i = 0; cards.length < i; i++) {
-						cards[i].classList.add("disableClick");
-					}
-				}
-				else {
-					cards[i].classList.add("open", "show");
-					openedCards++;
-				}
-			}
-			function pushCards() {
-				if (flippedCards.length < 2) {
-					flippedCards.push(cards[i]);
-				}
-
-				if (flippedCards.length === 1) {
-					cards[i].classList.add("disableClick");
-				}
-				if (flippedCards.length === 2) {
-					for (let i = 0; cards.length < i; i++) {
-						cards[i].classList.add("disableClick");
-					}
-					cardOne = flippedCards[0];
-					cardTwo = flippedCards[1];
-					pairCards();
-				}
-			}
-			function clickEventListener() {
-				cards[i].addEventListener('click', openCards);
-				cards[i].addEventListener('click', pushCards);
-			}
-			function removeEventListener() {
-				cards[i].removeEventListener('click', openCards);
-				cards[i].removeEventListener('click', pushCards);
-			}
-			if (flippedCards.length >= 2) {
-				removeEventListener();
-			}
-			else {
-				clickEventListener();
-			}
-		}
-
-	}
-
-	// When two cards are in the flippedCards-array, call this function
-	function pairCards() {
-
-		//Count the moves
-		movesCounter();
-
-		//Adjust star star rating
-		starRating();
-
-		//Compare the cards
-		compareCards();
-	}
-
-	// When both cards match, call this function
-	function cardsMatch() {
-		/* If the cards match, add the class "match" to them and push them into
-		a new array. */
-		for (let i = 0; cards.length < i; i++) {
-			cards[i].classList.add("disableClick");
-		}
-		flippedCards[0].classList.add("match");
-		flippedCards[1].classList.add("match");
-		matchedCards.push(cardOne, cardTwo);
-		flippedCards = [];
-
-		//Find out if all cards are matched and if the game is over
-		gameOver();
-	}
-
-	// When both cards don't match, call this function
-	function noMatch() {
-		//Set a timeout: turn the cards after one second if they don't match
-		flippedCards = [];
-		for (let i = 0; cards.length < i; i++) {
-			cards[i].classList.add("disableClick");
-		}
-		setTimeout(function() {
-			cardOne.classList.remove("open", "show", "disableClick");
-			cardTwo.classList.remove("open", "show", "disableClick");
-		}, 200);
-	}
-
-	// Add a function to compare the cards
-	function compareCards() {
-		//compare flippedCards
-		if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
-
-			cardsMatch();
-
-		} else {
-
-				noMatch();
-
-		}
-		//empty the array again
-		flippedCards = [];
-	}
-
-	/* The function gameOver checks whether there are 16 items in the array with the
-	matched cards and in the original array of cards and then decides if the game is
-	finished. */
-	function gameOver() {
-		if (matchedCards.length === icons.length) {
-			alert("You win!!!");
-		}
-	}
 
 	//Open cards
 	clickCard();
@@ -311,13 +316,6 @@ restartButton.addEventListener("click", function() {
 
 	//Start new game
 	startGame();
-
-	// Restart timer
-	if (moves == 1) {
-		second = 0;
-		minute = 0;
-		startTimer();
-	}
 
 });
 
