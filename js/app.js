@@ -1,4 +1,12 @@
+/*******************************************************************************
+Credits:
+
+The code for the modal box was taken from the following tutorial and adapted to
+my memory project: https://sabe.io/tutorials/how-to-create-modal-popup-box
+
+*******************************************************************************/
 /* TODO: What do I want to implement next?
+
 		1. Transform the alert at the end of a game into a modal box: https://www.w3schools.com/howto/howto_css_modals.asp
 		2. Add the star rating and the restart button to the modal box / pop-up
 		3. Animate the cards accordingly to whether they match or don't match
