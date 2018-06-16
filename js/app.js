@@ -50,6 +50,7 @@ let seconds = document.querySelector(".seconds");
 let minute = 0;
 let second = 0;
 let interval;
+let endTime;
 
 // Declare variables for the clickCard function
 let openedCards = 0;
@@ -256,6 +257,9 @@ function startTimer() {
 function stopTimer() {
 	timer.innerHTML = "Time: <span class=" + "minutes" + ">" + minute + "</span> mins, <span class=" + "seconds" + ">" + second + "</span> secs";
 	clearInterval(interval);
+	endTime = minute + ":" + second;
+	let finalTime = document.querySelector("#final-time");
+	finalTime.innerHTML = endTime;
 }
 
 // Add the star rating functionality
