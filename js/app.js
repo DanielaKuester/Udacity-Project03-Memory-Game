@@ -286,7 +286,7 @@ function limitOpenedCards() {
 /* When 16 cards are matched, the game is finished */
 function gameOver() {
 	if (matchedCards.length === icons.length) {
-		alert("You win!!!");
+		toggleModal();
 	}
 }
 
@@ -301,7 +301,6 @@ function windowOnClick(event) {
 	}
 }
 
-trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
