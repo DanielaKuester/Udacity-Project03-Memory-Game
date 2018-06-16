@@ -310,29 +310,8 @@ function windowOnClick(event) {
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
-
-// This function that initialises a new game
-function startGame() {
-	//Create the Deck
-	createDeck();
-
-	//Open cards
-	clickCard();
-}
-
-// Start the game for the first time
-startGame();
-
-// Add reset button
-
-const restartButton = document.querySelector(".restart");
-restartButton.addEventListener("click", function() {
-
-	//Remove all the cards from the deck
-	while (deck.firstChild) {
-  	deck.removeChild(deck.firstChild);
-	}
-
+// Reset variables at the beginning of a game
+function resetStats() {
 	// Reset movesCounter to 0
 	moves = 0;
 	countedMoves.innerHTML = 0;
@@ -344,10 +323,36 @@ restartButton.addEventListener("click", function() {
 	starOne.classList.add("orange");
 	starTwo.classList.add("orange");
 	starThree.classList.add("orange");
+}
+
+
+// This function that initialises a new game
+function startGame() {
+	// Reset variables
+	resetStats();
+
+	//Create the Deck
+	createDeck();
+
+	//Open cards
+	clickCard();
+}
+
+// Start the game for the first time
+startGame();
+
+
+// Add reset button
+const restartButton = document.querySelector(".restart");
+restartButton.addEventListener("click", function() {
+
+	//Remove all the cards from the deck
+	while (deck.firstChild) {
+  	deck.removeChild(deck.firstChild);
+	}
 
 	//Start new game
 	startGame();
-
 });
 
 
