@@ -240,7 +240,7 @@ function movesCounter() {
 // Add a function with the timer
 function startTimer() {
 // Implement the interval by which the timer should increase
-	setInterval(function interval() {
+	let interval = setInterval(function() {
 		second++;
 		minutes.innerHTML = minute;
 		seconds.innerHTML = second;
@@ -253,7 +253,7 @@ function startTimer() {
 
 // Add a function to stop the timer
 function stopTimer() {
-	//timer.innerHTML = "Time: <span class=" + "minutes" + ">0</span> mins, <span class=" + "seconds" + ">0</span> secs";
+	timer.innerHTML = "Time: <span class=" + "minutes" + ">" + minute + "</span> mins, <span class=" + "seconds" + ">" + second + "</span> secs";
 	clearInterval(interval);
 }
 
