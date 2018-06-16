@@ -20,6 +20,7 @@ my memory project: https://sabe.io/tutorials/how-to-create-modal-popup-box
 		4. Add animation to the cards when they are turned around
 		5. Maybe add animation to the stars in the pop-up-window
 		6. Fix the bug that you can turn around more than two cards when you click quickly
+		7. Make the website responsive!
  */
 
 /*
