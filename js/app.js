@@ -314,7 +314,7 @@ window.addEventListener("click", windowOnClick);
 // Add reset button
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
-	location.reload();
+	window.location.reload();
 });
 
 
