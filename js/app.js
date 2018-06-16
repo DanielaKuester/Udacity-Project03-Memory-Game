@@ -50,7 +50,6 @@ let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 let minute = 0;
 let second = 0;
-let increment;
 
 // Declare variables for the clickCard function
 let openedCards = 0;
@@ -242,7 +241,7 @@ function movesCounter() {
 // Add a function with the timer
 function startTimer() {
 // Implement the interval by which the timer should increase
-	let increment = setInterval(function() {
+	setInterval(function interval() {
 		second++;
 		minutes.innerHTML = minute;
 		seconds.innerHTML = second;
@@ -253,10 +252,10 @@ function startTimer() {
 	}, 1000);
 }
 
-// Add a function to reset the timer
-function resetTimer() {
-	timer.innerHTML = "Time: <span class=" + "minutes" + ">0</span> mins, <span class=" + "seconds" + ">0</span> secs";
-	clearInterval(increment);
+// Add a function to stop the timer
+function stopTimer() {
+	//timer.innerHTML = "Time: <span class=" + "minutes" + ">0</span> mins, <span class=" + "seconds" + ">0</span> secs";
+	clearInterval(interval);
 }
 
 // Add the star rating functionality
@@ -289,7 +288,7 @@ function limitOpenedCards() {
 function gameOver() {
 	if (matchedCards.length === icons.length) {
 		toggleModal();
-		resetTimer();
+		stopTimer();
 	}
 }
 
