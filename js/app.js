@@ -5,7 +5,7 @@ These two Udacity study jam sessions helped me to implement the basic functions:
 Memory Game tutorial by Yahya Elharony: https://youtu.be/G8J13lmApkQ?t=9
 Memory Game webinar by Mike Wales: https://youtu.be/_rUH-sEs68Y?t=2
 
-A tutorial that will hopefully help me to make the timer stop:
+A tutorial that I used to make the timer stop:
 https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
 
 The code for the modal box was taken from the following tutorial and adapted to
@@ -49,6 +49,7 @@ let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 let minute = 0;
 let second = 0;
+let interval;
 
 // Declare variables for the clickCard function
 let openedCards = 0;
@@ -240,7 +241,7 @@ function movesCounter() {
 // Add a function with the timer
 function startTimer() {
 // Implement the interval by which the timer should increase
-	let interval = setInterval(function() {
+	interval = setInterval(function() {
 		second++;
 		minutes.innerHTML = minute;
 		seconds.innerHTML = second;
