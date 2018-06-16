@@ -33,11 +33,10 @@ h1 {
 		font-weight: 500;
 }
 
-/*
- * Styles for the deck of cards
- */
+/*******************************************************************************
+THE DECK OF CARDS
+The deck is the coloured square: the background of the memory game cards. */
 
-/* The deck is the coloured square which is the background of the memory game cards. */
 .deck {
 		width: 660px;
 		min-height: 680px;
@@ -96,6 +95,9 @@ card is flipped. */
  * Styles for the Score Panel
  */
 
+/*******************************************************************************
+THE SCORE PANEL */
+
 .score-panel {
 		text-align: left;
 		font-size: 1.7em;
@@ -131,4 +133,52 @@ card is flipped. */
 .score-panel .restart {
 		/*float: right;*/
 		cursor: pointer;
+}
+
+/*******************************************************************************
+THE MODAL BOX
+
+The main code for the modal box is taken from
+https://sabe.io/tutorials/how-to-create-modal-popup-box
+Its style and functionality will be adapted to the needs of the Memory Game*/
+
+.modal {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(1.1);
+		transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 1rem 1.5rem;
+		width: 24rem;
+		border-radius: 0.5rem;
+}
+.close-button {
+		float: right;
+		width: 1.5rem;
+		line-height: 1.5rem;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 0.25rem;
+		background-color: lightgray;
+}
+.close-button:hover {
+		background-color: darkgray;
+}
+.show-modal {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1.0);
+		transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
