@@ -45,6 +45,7 @@ const cards = document.querySelectorAll('.card');
 const cardDeck = [];
 
 // These variables are needed for the timer
+const timer = document.querySelector(".timer");
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 let minute = 0;
@@ -240,24 +241,22 @@ function movesCounter() {
 
 // Add a function with the timer
 function startTimer() {
-	if (matchedCards.length < 16) {
-		// Implement the interval by which the timer should increase
-		let increment = setInterval(function() {
-			second++;
-			minutes.innerHTML = minute;
-			seconds.innerHTML = second;
-			if (second == 59) {
-				minute++;
-				//seconds.innerHTML = -4;
-				second = -1;
-			}
-		}, 1000);
-	}
-	else {
-		clearInterval(increment);
-		minute = 0;
-		second = -1;
-	}
+// Implement the interval by which the timer should increase
+	let increment = setInterval(function() {
+		second++;
+		minutes.innerHTML = minute;
+		seconds.innerHTML = second;
+		if (second == 59) {
+			minute++;
+			second = -1;
+		}
+	}, 1000);
+}
+
+// Add a function to reset the timer
+function resetTimer() {
+	timer.innerHTML = "Time: <span class=" + "minutes" + ">0</span> mins, <span class=" + "seconds" + ">0</span> secs";
+	clearInterval(increment);
 }
 
 // Add the star rating functionality
@@ -290,6 +289,7 @@ function limitOpenedCards() {
 function gameOver() {
 	if (matchedCards.length === icons.length) {
 		toggleModal();
+		resetTimer();
 	}
 }
 
@@ -341,11 +341,6 @@ restartButton.addEventListener("click", function() {
 	starOne.classList.add("orange");
 	starTwo.classList.add("orange");
 	starThree.classList.add("orange");
-
-	// Reset timer
-	minute = 0;
-	second = 0;
-	clearInterval(increment);
 
 	//Start new game
 	startGame();
