@@ -255,7 +255,7 @@ function startTimer() {
 
 // Add a function to stop the timer
 function stopTimer() {
-	timer.innerHTML = "Time: <span class=" + "minutes" + ">" + minute + "</span> mins, <span class=" + "seconds" + ">" + second + "</span> secs";
+	timer.innerHTML = "Time: <span class=\"minutes\">" + minute + "</span> mins, <span class=\"seconds\">" + second + "</span> secs";
 	clearInterval(interval);
 	endTime = minute + ":" + second;
 	let finalTime = document.querySelector("#final-time");
@@ -323,6 +323,13 @@ function resetStats() {
 	starOne.classList.add("orange");
 	starTwo.classList.add("orange");
 	starThree.classList.add("orange");
+
+	//Reset timer
+	clearInterval(interval);
+	second = 0;
+	minute = 0;
+	seconds.innerHTML = 0;
+	minutes.innerHTML = 0;
 }
 
 
