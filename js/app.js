@@ -311,33 +311,15 @@ function windowOnClick(event) {
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
-// Reset variables at the beginning of a game
-function resetStats() {
-	// Reset movesCounter to 0
-	moves = 0;
-	countedMoves.innerHTML = 0;
-	openedCards = 0;
-	flippedCards = [];
-	matchedCards = [];
-
-	// Reset stars rating to three orange stars
-	starOne.classList.add("orange");
-	starTwo.classList.add("orange");
-	starThree.classList.add("orange");
-
-	//Reset timer
-	clearInterval(interval);
-	second = 0;
-	minute = 0;
-	seconds.innerHTML = 0;
-	minutes.innerHTML = 0;
-}
+// Add reset button
+const restartButton = document.querySelector(".restart");
+restartButton.addEventListener("click", function() {
+	location.reload();
+});
 
 
 // This function that initialises a new game
 function startGame() {
-	// Reset variables
-	resetStats();
 
 	//Create the Deck
 	createDeck();
@@ -348,21 +330,6 @@ function startGame() {
 
 // Start the game for the first time
 startGame();
-
-
-// Add reset button
-const restartButton = document.querySelector(".restart");
-restartButton.addEventListener("click", function() {
-
-	//Remove all the cards from the deck
-	while (deck.firstChild) {
-  	deck.removeChild(deck.firstChild);
-	}
-
-	//Start new game
-	startGame();
-});
-
 
 
 
