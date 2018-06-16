@@ -5,6 +5,9 @@ These two Udacity study jam sessions helped me to implement the basic functions:
 Memory Game tutorial by Yahya Elharony: https://youtu.be/G8J13lmApkQ?t=9
 Memory Game webinar by Mike Wales: https://youtu.be/_rUH-sEs68Y?t=2
 
+A tutorial that will hopefully help me to make the timer stop:
+https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+
 The code for the modal box was taken from the following tutorial and adapted to
 my memory project: https://sabe.io/tutorials/how-to-create-modal-popup-box
 
