@@ -36,7 +36,7 @@ const icons = [
 const deck = document.querySelector(".deck");
 
 // This variable selects all the card elements
-const allCards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll('.card');
 
 // This variable creates an empty array for the newly created card deck
 const cardDeck = [];
@@ -64,7 +64,10 @@ const starOne = document.getElementById("starOne");
 const starTwo = document.getElementById("starTwo");
 const starThree = document.getElementById("starThree");
 
-const cards = document.querySelectorAll('.card');
+// The variables for the modal box
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
 
 /*
  * Display the cards on the page
@@ -286,6 +289,22 @@ function gameOver() {
 		alert("You win!!!");
 	}
 }
+
+// The basic code for the modal box: It starts when a button is clicked
+function toggleModal() {
+	modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+	if (event.target === modal) {
+		toggleModal();
+	}
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
 
 // This function that initialises a new game
 function startGame() {
