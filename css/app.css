@@ -184,5 +184,8 @@ Its style and functionality will be adapted to the needs of the Memory Game*/
 }
 
 #modal-score {
-	font-size: 1em;
+	font-size: 1.5em;
+	display: flex;
+	flex-wrap: wrap;
+	width: 320px;
 }
