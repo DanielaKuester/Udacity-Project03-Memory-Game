@@ -65,9 +65,9 @@ const countedMoves = document.querySelector(".moves");
 let moves = 0;
 
 // The stars for the star rating
-const starOne = document.getElementById("starOne");
-const starTwo = document.getElementById("starTwo");
-const starThree = document.getElementById("starThree");
+const starOne = document.querySelector(".star-one");
+const starTwo = document.querySelector(".star-two");
+const starThree = document.querySelector(".star-three");
 
 // The variables for the modal box
 const modal = document.querySelector(".modal");
