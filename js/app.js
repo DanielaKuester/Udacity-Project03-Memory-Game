@@ -132,6 +132,14 @@ function clickCard() {
 				cards[i].classList.add("open", "show");
 				openedCards++;
 			}
+
+			// Make the timer start on the first click
+			if (openedCards == 1) {
+				startTimer();
+			}
+			else {
+				return;
+			}
 		}
 		function pushCards() {
 			if (flippedCards.length < 2) {
@@ -229,16 +237,6 @@ function pairCards() {
 function movesCounter() {
 	moves++;
 	countedMoves.innerHTML = moves;
-	// Sets the point where the timer starts
-	if (moves == 0) {
-		second = 0;
-		minute = 0;
-	}
-	if (moves == 1) {
-		second = 0;
-		minute = 0;
-		startTimer();
-	}
 }
 
 // Add a function with the timer
@@ -292,18 +290,6 @@ const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
 	window.location.reload();
 });
-
-
-/* A function that can help me in the future to limit the opened cards
-function limitOpenedCards() {
-	if (openedCards > 2) {
-		return;
-	}
-	else {
-		return;
-	}
-}
-*/
 
 /* When 16 cards are matched, the game is finished */
 function gameOver() {
