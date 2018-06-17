@@ -265,7 +265,7 @@ function stopTimer() {
 	let scorePanelClone = scorePanel.cloneNode(true);
 	let finalScore = document.querySelector(".final-score");
 	let finalScorePanel = finalScore.appendChild(scorePanelClone);
-	
+
 	// Adapt the final score panel
 	finalScorePanel.setAttribute("id", "modal-score");
 	let oldReset = finalScorePanel.lastElementChild;
@@ -286,6 +286,12 @@ function starRating() {
 		starTwo.classList.remove("orange");
 	}
 }
+
+// Add reset button
+const restartButton = document.querySelector(".restart");
+restartButton.addEventListener("click", function() {
+	window.location.reload();
+});
 
 
 /* A function that can help me in the future to limit the opened cards
@@ -321,14 +327,13 @@ function windowOnClick(event) {
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
-// Add reset button
-const restartButton = document.querySelector(".restart");
-restartButton.addEventListener("click", function() {
+// Add restart button to the modal box
+const finalRestartButton = document.querySelector("#final-restart");
+finalRestartButton.addEventListener("click", function() {
 	window.location.reload();
 });
 
-
-// This function that initialises a new game
+// This function initialises a new game
 function startGame() {
 
 	//Create the Deck
