@@ -261,6 +261,10 @@ function stopTimer() {
 	endTime = minute + ":" + second;
 	let finalTime = document.querySelector("#final-time");
 	finalTime.innerHTML = endTime;
+	let scorePanel = document.querySelector(".score-panel");
+	let scorePanelClone = scorePanel.cloneNode(true);
+	let finalScore = document.querySelector(".final-score");
+	let finalScorePanel = finalScore.appendChild(scorePanelClone);
 }
 
 // Add the star rating functionality
