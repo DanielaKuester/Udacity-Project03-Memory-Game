@@ -185,11 +185,11 @@ Its style and functionality will be adapted to the needs of the Memory Game*/
 }
 
 #modal-score {
-	font-size: 1.5em;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	width: 320px;
+		font-size: 1.5em;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		width: 320px;
 }
 
 #final-restart {
@@ -202,3 +202,9 @@ Its style and functionality will be adapted to the needs of the Memory Game*/
 
 /*******************************************************************************
 RESPONSIVE WEBDESIGN
+
+/* Make site responsive to iPad, iPad Pro and other tablets */
+@media screen and (max-width:500px) {
+
+		
+}
