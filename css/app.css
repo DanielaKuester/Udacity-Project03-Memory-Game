@@ -187,5 +187,6 @@ Its style and functionality will be adapted to the needs of the Memory Game*/
 	font-size: 1.5em;
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: column;
 	width: 320px;
 }

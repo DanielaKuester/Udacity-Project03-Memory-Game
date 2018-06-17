@@ -29,8 +29,11 @@
 						<li class="star-three"><i class="fa fa-star"></i></li>
 					</ul>
 
-					<!-- The span-tag includes the number of counted moves -->
-					<span class="moves">0</span> Moves
+					<!-- The div-tag is wrapped around the moves-counter to adapt flexbox;
+					the span-tag includes the number of counted moves -->
+					<div>
+						<span class="moves">0</span> Moves
+					</div>
 
 					<!-- This div contains the timer -->
 					<div class="timer">
@@ -107,9 +110,9 @@
 						other items can show weird behaviour in different browsers -->
             <span class="close-button">&times;</span>
             <h1>You win!!!</h1>
-						<p>Play again?</p>
 						<div class="final-score">
 						</div>
+						<p>Play again?</p>
         </div>
     </div>
 		<!-- The link to the script is included at the end of the HTML so that the
