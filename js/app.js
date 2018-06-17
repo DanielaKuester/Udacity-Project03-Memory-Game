@@ -15,12 +15,11 @@ my memory project: https://sabe.io/tutorials/how-to-create-modal-popup-box
 /* TODO: What do I want to implement next?
 
 		1. Adapt the README document
-		2. Add the star rating and the restart button to the modal box / pop-up
+		2. Make the website responsive!
 		3. Animate the cards accordingly to whether they match or don't match
 		4. Add animation to the cards when they are turned around
 		5. Maybe add animation to the stars in the pop-up-window
 		6. Fix the bug that you can turn around more than two cards when you click quickly
-		7. Make the website responsive!
  */
 
 /*
