@@ -74,6 +74,13 @@ const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
 const closeButton = document.querySelector(".close-button");
 
+// The variables for the final score panel in the modal box
+// Add a final score panel to the modal box
+let scorePanel = document.querySelector(".score-panel");
+let scorePanelClone = scorePanel.cloneNode(true);
+let finalScore = document.querySelector(".final-score");
+let finalScorePanel = finalScore.appendChild(scorePanelClone);
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -258,14 +265,6 @@ function startTimer() {
 function stopTimer() {
 	timer.innerHTML = "Time: <span class=\"minutes\">" + minute + "</span> mins, <span class=\"seconds\">" + second + "</span> secs";
 	clearInterval(interval);
-	//endTime = minute + ":" + second;
-	//let finalTime = document.querySelector("#final-time");
-	//finalTime.innerHTML = endTime;
-	let scorePanel = document.querySelector(".score-panel");
-	let scorePanelClone = scorePanel.cloneNode(true);
-	let finalScore = document.querySelector(".final-score");
-	let finalScorePanel = finalScore.appendChild(scorePanelClone);
-	finalScorePanel.setAttribute("id", "modal-score");
 }
 
 // Add the star rating functionality
@@ -282,6 +281,9 @@ function starRating() {
 		starTwo.classList.remove("orange");
 	}
 }
+
+// Adapt the final score panel
+finalScorePanel.setAttribute("id", "modal-score");
 
 /* A function that can help me in the future to limit the opened cards
 function limitOpenedCards() {
