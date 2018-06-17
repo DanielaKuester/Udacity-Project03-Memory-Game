@@ -284,6 +284,8 @@ function starRating() {
 
 // Adapt the final score panel
 finalScorePanel.setAttribute("id", "modal-score");
+let oldReset = finalScorePanel.lastElementChild;
+oldReset.remove();
 
 /* A function that can help me in the future to limit the opened cards
 function limitOpenedCards() {
