@@ -275,6 +275,7 @@ RESPONSIVE WEBDESIGN
 
 		.score-panel {
 			width: 380px;
+			font-size: 1.3em;
 			flex-wrap: wrap;
 			flex-direction: column;
 			text-align: left;
