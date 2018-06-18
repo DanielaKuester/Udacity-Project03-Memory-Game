@@ -207,7 +207,7 @@ RESPONSIVE WEBDESIGN
 @media screen and (max-width: 350px){
 		h1 {
 			font-weight: 400;
-			font-size: 1.6em;
+			font-size: 1.3em;
 		}
 
 		.deck {
@@ -223,7 +223,7 @@ RESPONSIVE WEBDESIGN
 
 		.score-panel {
 			width: 280px;
-			font-size: 1.3em;
+			font-size: 1.1em;
 			flex-wrap: wrap;
 			flex-direction: column;
 			text-align: left;
@@ -236,7 +236,7 @@ RESPONSIVE WEBDESIGN
 
 		h1 {
 			font-weight: 400;
-			font-size: 1.6em;
+			font-size: 1.3em;
 		}
 
 		.deck {
@@ -252,7 +252,7 @@ RESPONSIVE WEBDESIGN
 
 		.score-panel {
 			width: 300px;
-			font-size: 1.3em;
+			font-size: 1.1em;
 			flex-wrap: wrap;
 			flex-direction: column;
 			text-align: left;
@@ -262,6 +262,11 @@ RESPONSIVE WEBDESIGN
 /* Make site responsive to phones */
 @media screen and (min-width: 401px) and (max-width: 600px){
 
+		h1 {
+			font-weight: 400;
+			font-size: 1.3em;
+		}
+		
 		.deck {
 			width: 380px;
 			min-height: 380px;
@@ -275,7 +280,7 @@ RESPONSIVE WEBDESIGN
 
 		.score-panel {
 			width: 380px;
-			font-size: 1.3em;
+			font-size: 1.1em;
 			flex-wrap: wrap;
 			flex-direction: column;
 			text-align: left;
