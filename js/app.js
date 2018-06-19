@@ -184,8 +184,10 @@ function cardsMatch() {
 	for (let i = 0; cards.length < i; i++) {
 		cards[i].classList.add("disableClick");
 	}
-	flippedCards[0].classList.add("match");
-	flippedCards[1].classList.add("match");
+	flippedCards[0].classList.remove("animated", "flipInY");
+	flippedCards[0].classList.add("match", "animated", "bounce");
+	flippedCards[1].classList.remove("animated", "flipInY");
+	flippedCards[1].classList.add("match", "animated", "bounce");
 	matchedCards.push(cardOne, cardTwo);
 	flippedCards = [];
 
