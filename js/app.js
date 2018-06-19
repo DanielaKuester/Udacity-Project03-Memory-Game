@@ -210,7 +210,7 @@ function noMatch() {
 		cardTwo.classList.add("animated", "shake");
 		cardOne.classList.remove("open", "show", "disableClick");
 		cardTwo.classList.remove("open", "show", "disableClick");
-	}, 350);
+	}, 300);
 }
 
 // Add a function to compare the cards
