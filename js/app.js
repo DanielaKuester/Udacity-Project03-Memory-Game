@@ -123,6 +123,7 @@ function clickCard() {
 	/* Loop through all the cards. */
 	for (let i = 0; i < cards.length; i++) {
 		function openCards() {
+			cards[i].classList.remove("animated", "shake");
 			if (flippedCards >= 1) {
 				for (let i = 0; cards.length < i; i++) {
 					cards[i].classList.add("animated", "flipInY");
@@ -202,10 +203,14 @@ function noMatch() {
 	for (let i = 0; cards.length < i; i++) {
 		cards[i].classList.add("disableClick");
 	}
+	cardOne.classList.remove("animated", "flipInY");
+	cardTwo.classList.remove("animated", "flipInY");
 	setTimeout(function() {
-		cardOne.classList.remove("open", "show", "animated", "flipInY", "disableClick");
-		cardTwo.classList.remove("open", "show", "animated", "flipInY", "disableClick");
-	}, 500);
+		cardOne.classList.add("animated", "shake");
+		cardTwo.classList.add("animated", "shake");
+		cardOne.classList.remove("open", "show", "disableClick");
+		cardTwo.classList.remove("open", "show", "disableClick");
+	}, 350);
 }
 
 // Add a function to compare the cards
