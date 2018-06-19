@@ -330,6 +330,8 @@ finalRestartButton.addEventListener("click", function() {
 
 // This function initialises a new game
 function startGame() {
+	let invisibleHeading = document.querySelector(".invisible");
+	invisibleHeading.remove();
 
 	//Create the Deck
 	createDeck();
