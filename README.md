@@ -44,6 +44,13 @@ better at debugging. Thanks for sharing your great tips!
 * The code for the modal box was taken from [this tutorial](https://sabe.io/tutorials/how-to-create-modal-popup-box) and afterwards adapted to the needs of the Memory Game project.
 * All of the CSS animations are (c) Daniel Eden 2018 (MIT License). The CSS animations were implemented with the following [library](https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css). You can find the instructions in the [CSS animations repository](https://github.com/daneden/animate.css).
 
+## Acknowledgements
+This was one of my first a bit more complex programming projects with HTML, CSS and JavaScript. I had to face a few challenges during this project and I am grateful for them because I learned a lot through them and they made me grow as a front end developer. Many people supported me on my way and I want to use the chance to thank them. I thank my family and friends for their patience with me, my IT friends for showing me that even experienced programmers regularly face challenges or roadblocks, my cat Filou for forcing me to cuddle him when I need a break. My biggest thanks go to the Udacity team and all of the other Udacity students for their constant motivation and support on Slack.
+
+The same goes for my little "Memory Game project study group" on Slack and the #turtle-squad! You are incredibly positive and I'm looking forward every day to start my day with you! You and my pet turtles regularly remind me of one of my life mottos (together with the Udacity motto "never stop learning"): "Slow and steady wins the race!"
+
+You are all great people! Thanks for everything and thanks for being a part of my life!
+
 ## Contributing
 
 This repository is one of my first more complex projects as a Udacity student. I am planning to update the project later to document my learning progress and my growing
