@@ -13,7 +13,7 @@ The goal of the game is to match the cards so that all the cards will be flipped
 
 And now go and play! How many moves does it take you to succeed?
 
-## Play Online in the Live view
+## Play Online in the Live View
 
 You can play the game here: https://danielakuester.github.io/Udacity-Project03-Memory-Game/
 
