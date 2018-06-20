@@ -14,13 +14,11 @@ my memory project: https://sabe.io/tutorials/how-to-create-modal-popup-box
 *******************************************************************************/
 /* TODO: What do I want to implement next?
 
-		1. Adapt the README document
-		2. Make the website responsive!
-		3. Animate the cards accordingly to whether they match or don't match
-		4. Add animation to the cards when they are turned around
-		5. Maybe add animation to the stars in the pop-up-window
-		6. Fix the bug that you can turn around more than two cards when you click quickly
-		7. Update <meta name> tag for SEO purposes
+		1. Learn to implement CSS animations from scratch and without a library
+		2. Maybe add animation to the stars in the pop-up-window
+		3. Fix the bug that you can turn around more than two cards when you click quickly
+		4. Maybe add a "future updates" section to the README with plans for this project for the future
+		
  */
 
 /*
